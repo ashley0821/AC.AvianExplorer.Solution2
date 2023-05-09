@@ -32,5 +32,10 @@ namespace AC.AvianExplorer.WinApp
 			frm.ShowDialog();
 
 		}
+
+		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			this.Owner.Show();
+		}
 	}
 }

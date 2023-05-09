@@ -61,6 +61,7 @@
 			this.Controls.Add(this.btmLocation);
 			this.Name = "FormMain";
 			this.Text = "FormMain";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
 			this.ResumeLayout(false);
 
 		}

@@ -53,6 +53,12 @@
     <Compile Include="FormAddLocation.Designer.cs">
       <DependentUpon>FormAddLocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddSpecies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSpecies.Designer.cs">
+      <DependentUpon>FormAddSpecies.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="ViewModels\UserVM.cs" />
     <EmbeddedResource Include="FormAddLocation.resx">
       <DependentUpon>FormAddLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSpecies.resx">
+      <DependentUpon>FormAddSpecies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditLocation.resx">
       <DependentUpon>FormEditLocation.cs</DependentUpon>

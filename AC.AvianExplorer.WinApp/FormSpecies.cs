@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace AC.AvianExplorer.WinApp
 {
-	public partial class FormSpecies : Form
+	public partial class FormSpecies : Form, IGrid
 	{
 		private List<SpeciesDto> dto;
 		public FormSpecies()
@@ -62,7 +62,7 @@ namespace AC.AvianExplorer.WinApp
 
 		private void btnAddSpecie_Click(object sender, EventArgs e)
 		{
-			var frm = new FormAddSpecies();123
+			var frm = new FormAddSpecies();
 
 			//owner縮小時，視窗會一起縮小
 			//視窗關掉後，owner會自動更新
