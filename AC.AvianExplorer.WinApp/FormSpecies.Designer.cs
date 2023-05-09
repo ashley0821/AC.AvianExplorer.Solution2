@@ -116,6 +116,7 @@
 			this.btnAddSpecie.TabIndex = 6;
 			this.btnAddSpecie.Text = "新增";
 			this.btnAddSpecie.UseVisualStyleBackColor = true;
+			this.btnAddSpecie.Click += new System.EventHandler(this.btnAddSpecie_Click);
 			// 
 			// FormSpecies
 			// 
