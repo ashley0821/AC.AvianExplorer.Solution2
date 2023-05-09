@@ -70,5 +70,24 @@ namespace AC.AvianExplorer.WinApp
 
 			frm.ShowDialog();
 		}
+
+		private void comboBoxFamilyName_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+			txtSpeciesName.Text = string.Empty;
+			txtCommonName.Text = string.Empty;
+			Display();
+		}
+
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0) return;//點到標題欄不算
+
+			int speciesId = dto[e.RowIndex].SpeciesId;
+
+			var frm = new FormEditSpecies(speciesId);
+			frm.Owner = this;
+			frm.ShowDialog();
+		}
 	}
 }

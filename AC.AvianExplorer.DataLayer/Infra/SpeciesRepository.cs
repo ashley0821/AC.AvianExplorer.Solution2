@@ -29,9 +29,22 @@ namespace AC.AvianExplorer.DataLayer.Infra
 			throw new NotImplementedException();
 		}
 
-		public SpeciesDto Get(int speciesId)
+		public SpeciesEditDto Get(int speciesId)
 		{
-			throw new NotImplementedException();
+			string sql = "SELECT * FROM Species WHERE SpeciesId = " + speciesId;
+
+			Func<SqlDataReader, SpeciesEditDto> funcAssembler = reader =>
+			{
+				return new SpeciesEditDto
+				{
+					SpeciesId = speciesId,
+					CommonName = reader.GetString("CommonName"),
+					SpeciesName = reader.GetString("SpeciesName"),
+					FamilyName = reader.GetString("FamilyName")
+				};
+			};
+
+			return sqlDb.Get<SpeciesEditDto>(sqlDb.GetConnection, funcAssembler, sql, null);
 		}
 
 		public List<SpeciesDto> Search(string commonName, string speciesName, string familyName, int? speciesId)
@@ -88,7 +101,16 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public void Update(SpeciesEditDto dto)
 		{
-			throw new NotImplementedException();
+			string sql = "UPDATE Species SET CommonName = @CommonName, SpeciesName = @SpeciesName, FamilyName = @FamilyName WHERE SpeciesId = @SpeciesId";
+
+			var parameters = SqlParameterBuilder.create()
+							 .AddInt("@SpeciesId", dto.SpeciesId)
+							 .AddNvarchar("@CommonName", 50, dto.CommonName)
+							 .AddNvarchar("@SpeciesName", 50, dto.SpeciesName)
+							 .AddNvarchar("@FamilyName", 50, dto.FamilyName)
+							 .Build();
+
+			sqlDb.UpdateOrDelete(sqlDb.GetConnection, sql, parameters);
 		}
 	}
 }

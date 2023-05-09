@@ -65,6 +65,12 @@
     <Compile Include="FormEditLocation.Designer.cs">
       <DependentUpon>FormEditLocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditSpecies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditSpecies.Designer.cs">
+      <DependentUpon>FormEditSpecies.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditLocation.resx">
       <DependentUpon>FormEditLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditSpecies.resx">
+      <DependentUpon>FormEditSpecies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLocation.resx">
       <DependentUpon>FormLocation.cs</DependentUpon>

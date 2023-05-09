@@ -37,5 +37,11 @@ namespace AC.AvianExplorer.WinApp
 		{
 			this.Owner.Show();
 		}
+
+		private void btnRecord_Click(object sender, EventArgs e)
+		{
+			var frm = new FormRecord(currentUserId);
+			frm.ShowDialog();
+		}
 	}
 }

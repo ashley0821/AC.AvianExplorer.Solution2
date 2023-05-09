@@ -12,7 +12,7 @@ namespace AC.AvianExplorer.DataLayer.Interfaces
 		void Create(SpeciesAddDto dto);
 		void Update(SpeciesEditDto dto);
 		void Delete(int speciesId);
-		SpeciesDto Get(int speciesId);
+		SpeciesEditDto Get(int speciesId);
 
 		//需要join資料表時，回傳dto比較恰當
 		List<SpeciesDto> Search(string commonName, string speciesName, string familyName, int? speciesId);
