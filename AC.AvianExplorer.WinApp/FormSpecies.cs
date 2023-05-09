@@ -62,7 +62,7 @@ namespace AC.AvianExplorer.WinApp
 
 		private void btnAddSpecie_Click(object sender, EventArgs e)
 		{
-			var frm = new FormAddSpecies();
+			var frm = new FormAddSpecies();123
 
 			//owner縮小時，視窗會一起縮小
 			//視窗關掉後，owner會自動更新
