@@ -25,14 +25,15 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public void Delete(int locationId)
 		{
-			string sql = "DELETE FROM Locations WHERE LocationId = " + locationId;
+			string sql = "DELETE FROM Locations WHERE LocationId = " + locationId ;
+
 
 			sqlDb.UpdateOrDelete(sqlDb.GetConnection, sql, null);
 		}
 
 		public LocationDto Get(int locationId)
 		{
-			string sql = "SELECT * FROM Locations WHERE LocationId = " + locationId + " ON DELETE CASCADE";
+			string sql = "SELECT * FROM Locations WHERE LocationId = " + locationId ;
 
 			Func<SqlDataReader, LocationDto> funcAssembler = reader =>
 			{

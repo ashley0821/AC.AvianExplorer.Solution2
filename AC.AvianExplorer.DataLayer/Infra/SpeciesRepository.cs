@@ -83,7 +83,7 @@ namespace AC.AvianExplorer.DataLayer.Infra
 			sql += where;
 			#endregion
 
-			sql += " ORDER BY SpeciesId";
+			sql += " ORDER BY FamilyName";
 
 			Func<SqlDataReader, SpeciesDto> funcAssembler = reader =>
 			{

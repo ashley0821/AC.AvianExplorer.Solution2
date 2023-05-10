@@ -26,7 +26,17 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public UserEntity Get(int userId)
 		{
-			throw new NotImplementedException();
+			string sql = "SELECT * FROM Users WHERE UserId = " + userId;
+
+			Func<SqlDataReader, UserEntity> funcAssembler = reader =>
+			{
+				int UserId = reader.GetInt32("UserId", 0);
+				string UserName = reader.GetString("UserName");
+				string UserPwd = reader.GetString("UserPwd");
+				return new UserEntity(UserName, UserPwd, UserId);
+			};
+
+			return sqlDb.Get<UserEntity>(sqlDb.GetConnection, funcAssembler, sql, null);
 		}
 
 		public UserEntity GetByName(string userName)
@@ -86,7 +96,15 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public void Update(UserEntity entity)
 		{
-			throw new NotImplementedException();
+			string sql = "UPDATE Users SET UserName = @UserName, UserPwd = @UserPwd WHERE UserId = @UserId";
+
+			var parameters = SqlParameterBuilder.create()
+							 .AddInt("@UserId", entity.UserId)
+							 .AddNvarchar("@UserName", 50, entity.UserName)
+							 .AddNvarchar("@UserPwd", 50,entity.UserPwd )
+							 .Build();
+
+			sqlDb.UpdateOrDelete(sqlDb.GetConnection, sql, parameters);
 		}
 	}
 }

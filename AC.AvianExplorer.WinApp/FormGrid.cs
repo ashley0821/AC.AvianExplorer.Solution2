@@ -11,42 +11,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace AC.AvianExplorer.WinApp
 {
-	public partial class FormRecord : Form , IGrid
+	public partial class FormGrid : Form
 	{
 		private readonly int currentUserId;
-
-		private List<RecordDto> dto;
-		public FormRecord(int currentUserId)
+		public FormGrid(int currentUserId)
 		{
 			InitializeComponent();
-			this.currentUserId = currentUserId;	
+
+			this.currentUserId = currentUserId;
 		}
 
-		public void Display()
-		{
-			
-
-			IRecordRepository categoryRepository = new RecordRepository();
-			RecordService service = new RecordService(categoryRepository);
-
-			string locationName = comboBoxLocation.Text;
-			string familyName = comboBoxFamilyName.Text;
-			string commonName = txtCommonName.Text;
-
-			dto = service.Search(locationName, familyName, commonName, null)
-				         .Where(x => x.UserId == currentUserId)
-					     .ToList();
-
-			dataGridView1.DataSource = dto;
-
-			
-		}
-
-		private void btnSearchRecord_Click(object sender, EventArgs e)
+		private void FormGrid_Load(object sender, EventArgs e)
 		{
 			Display();
 
@@ -78,16 +56,39 @@ namespace AC.AvianExplorer.WinApp
 			comboBoxFamilyName.DataSource = family;
 		}
 
-		private void FormRecord_Load(object sender, EventArgs e)
+		public void Display()
 		{
-			Display();
+			IGridRepository categoryRepository = new GridRepository();
+			GridService service = new GridService(categoryRepository);
 
-			SetComboBox();
+			string locationName = comboBoxLocation.Text;
+			string familyName = comboBoxFamilyName.Text;
+			string commonName = txtCommonName.Text;
+
+			var dto = service.Search(locationName, familyName, commonName)
+							 .Where(x => x.UserId == currentUserId)
+							 .ToList();
+
+			dataGridView1.DataSource = dto;
+
+			int familyQuantity = dto.Select(x => x.FamilyName)
+									.Distinct()
+									.Count();
+
+			int speciesQuantity = dto.Select(x => x.CommonName)
+				                     .Distinct()
+									 .Count();
+
+			int totalQuantity = dto.Select(x => x.Total)
+								   .Sum();
+
+
+
+			labelDescription.Text = $"共紀錄{familyQuantity}科{speciesQuantity}種，{totalQuantity}隻次";
 		}
 
-		private void comboBoxFamilyName_SelectedIndexChanged(object sender, EventArgs e)
+		private void btnSearch_Click(object sender, EventArgs e)
 		{
-			txtCommonName.Text = string.Empty;
 			Display();
 		}
 
@@ -111,37 +112,10 @@ namespace AC.AvianExplorer.WinApp
 			Display();
 		}
 
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		private void comboBoxFamilyName_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (e.RowIndex < 0) return;//點到標題欄不算
-
-			int speciesId = dto[e.RowIndex].RecordId;
-
-			var frm = new FormEditRecord(speciesId, currentUserId);
-			frm.Owner = this;
-			frm.ShowDialog();
-		}
-
-		private void btnAddRecord_Click(object sender, EventArgs e)
-		{
-			var frm = new FormAddRecord(currentUserId);
-
-			//owner縮小時，視窗會一起縮小
-			//視窗關掉後，owner會自動更新
-			frm.Owner = this;
-
-			frm.ShowDialog();
-		}
-
-		private void btnGrid_Click(object sender, EventArgs e)
-		{
-			var frm = new FormGrid(currentUserId);
-
-			//owner縮小時，視窗會一起縮小
-			//視窗關掉後，owner會自動更新
-			frm.Owner = this;
-
-			frm.ShowDialog();
+			txtCommonName.Text = string.Empty;
+			Display();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace AC.AvianExplorer.WinApp
 {
-	partial class FormSignup
+	partial class FormUser
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -32,21 +32,21 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.btnSignup = new System.Windows.Forms.Button();
+			this.btnUpdateUser = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// txtPwd
 			// 
-			this.txtPwd.Location = new System.Drawing.Point(76, 51);
+			this.txtPwd.Location = new System.Drawing.Point(86, 55);
 			this.txtPwd.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.txtPwd.Name = "txtPwd";
 			this.txtPwd.Size = new System.Drawing.Size(110, 22);
-			this.txtPwd.TabIndex = 4;
+			this.txtPwd.TabIndex = 5;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(30, 56);
+			this.label2.Location = new System.Drawing.Point(40, 60);
 			this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(32, 12);
@@ -55,45 +55,47 @@
 			// 
 			// txtName
 			// 
-			this.txtName.Location = new System.Drawing.Point(76, 25);
+			this.txtName.Location = new System.Drawing.Point(86, 29);
 			this.txtName.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(110, 22);
-			this.txtName.TabIndex = 5;
+			this.txtName.TabIndex = 3;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(30, 30);
+			this.label1.Location = new System.Drawing.Point(40, 34);
 			this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(32, 12);
-			this.label1.TabIndex = 3;
+			this.label1.TabIndex = 4;
 			this.label1.Text = "名稱:";
 			// 
-			// btnSignup
+			// btnUpdateUser
 			// 
-			this.btnSignup.Location = new System.Drawing.Point(111, 87);
-			this.btnSignup.Name = "btnSignup";
-			this.btnSignup.Size = new System.Drawing.Size(75, 23);
-			this.btnSignup.TabIndex = 6;
-			this.btnSignup.Text = "註冊";
-			this.btnSignup.UseVisualStyleBackColor = true;
-			this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
+			this.btnUpdateUser.Location = new System.Drawing.Point(120, 83);
+			this.btnUpdateUser.Name = "btnUpdateUser";
+			this.btnUpdateUser.Size = new System.Drawing.Size(75, 23);
+			this.btnUpdateUser.TabIndex = 6;
+			this.btnUpdateUser.Text = "更新";
+			this.btnUpdateUser.UseVisualStyleBackColor = true;
+			this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
 			// 
-			// FormSignup
+			// FormUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(223, 141);
-			this.Controls.Add(this.btnSignup);
+			this.ClientSize = new System.Drawing.Size(236, 136);
+			this.Controls.Add(this.btnUpdateUser);
 			this.Controls.Add(this.txtPwd);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label1);
-			this.MinimumSize = new System.Drawing.Size(239, 180);
-			this.Name = "FormSignup";
-			this.Text = "FormSignup";
+			this.MaximizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(252, 175);
+			this.Name = "FormUser";
+			this.Text = "FormUser";
+			this.Load += new System.EventHandler(this.FormUser_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -105,6 +107,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btnSignup;
+		private System.Windows.Forms.Button btnUpdateUser;
 	}
 }

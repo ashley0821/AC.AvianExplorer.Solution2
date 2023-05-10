@@ -28,5 +28,28 @@ namespace AC.AvianExplorer.DataLayer.Services
 		{
 			return _repo.Get(id);
 		}
+
+		public void Update(RecordEditDto dto)
+		{
+			List<RecordDto> data = _repo.Search(dto.LocationName, dto.FamilyName, dto.CommonName, null);
+			if (data != null && data.Count > 0)
+			{
+				if (data[0].RecordId != dto.RecordId) throw new Exception("分類名稱已存在，不允許更新");
+			}
+
+
+			//若名稱唯一，允許新建紀錄
+			_repo.Update(dto);
+		}
+
+		public void Create(RecordAddDto dto)
+		{
+			//檢查name是否已存在
+			var data = _repo.Search(dto.LocationName, dto.FamilyName, dto.CommonName, null);
+			if (data != null && data.Count > 0) throw new Exception("分類名稱已存在");
+
+			//若名稱唯一，允許新建紀錄
+			_repo.Create(dto);
+		}
 	}
 }

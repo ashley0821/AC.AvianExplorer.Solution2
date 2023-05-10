@@ -18,9 +18,13 @@ namespace AC.AvianExplorer.WinApp
 	public partial class FormSpecies : Form, IGrid
 	{
 		private List<SpeciesDto> dto;
-		public FormSpecies()
+
+		private readonly int currentUserId;
+		public FormSpecies(int currentUserId)
 		{
 			InitializeComponent();
+
+			this.currentUserId = currentUserId;
 		}
 
 		private void FormSpecies_Load(object sender, EventArgs e)
@@ -62,6 +66,12 @@ namespace AC.AvianExplorer.WinApp
 
 		private void btnAddSpecie_Click(object sender, EventArgs e)
 		{
+			if (currentUserId != 1)
+			{
+				MessageBox.Show("非管理員不得更動名錄");
+				return;
+			}
+
 			var frm = new FormAddSpecies();
 
 			//owner縮小時，視窗會一起縮小
@@ -81,13 +91,19 @@ namespace AC.AvianExplorer.WinApp
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0) return;//點到標題欄不算
+			if (currentUserId == 1)
+			{
+				if (e.RowIndex < 0) return;//點到標題欄不算
 
-			int speciesId = dto[e.RowIndex].SpeciesId;
+				int speciesId = dto[e.RowIndex].SpeciesId;
 
-			var frm = new FormEditSpecies(speciesId);
-			frm.Owner = this;
-			frm.ShowDialog();
+				var frm = new FormEditSpecies(speciesId);
+				frm.Owner = this;
+				frm.ShowDialog();
+			}
+
+
+			
 		}
 
 		

@@ -28,7 +28,7 @@ namespace AC.AvianExplorer.WinApp
 
 		private void btnSpecies_Click(object sender, EventArgs e)
 		{
-			var frm = new FormSpecies();
+			var frm = new FormSpecies(currentUserId);
 			frm.ShowDialog();
 
 		}
@@ -41,6 +41,13 @@ namespace AC.AvianExplorer.WinApp
 		private void btnRecord_Click(object sender, EventArgs e)
 		{
 			var frm = new FormRecord(currentUserId);
+			frm.ShowDialog();
+		}
+
+		private void btnUser_Click(object sender, EventArgs e)
+		{
+			var frm = new FormUser(currentUserId);
+			frm.Owner = this;
 			frm.ShowDialog();
 		}
 	}

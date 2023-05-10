@@ -65,8 +65,10 @@ namespace AC.AvianExplorer.WinApp
 			comboBoxCommonName.DataSource = commonName;
 			comboBoxCommonName.SelectedItem = dto.CommonName;
 
+			dateTimePickerRecordTime.Value = dto.RecordTime;
+
 			txtQuantity.Text = dto.Quantity.ToString();
-			txtRecordTime.Text = dto.RecordTime.ToString("yyyy/MM/dd");
+			
 		}
 
 		private void comboBoxFamilyName_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,10 +90,10 @@ namespace AC.AvianExplorer.WinApp
 			string familyName = comboBoxFamilyName.Text;
 			string commonName = comboBoxCommonName.Text;
 
-			bool isDate = DateTime.TryParse(txtRecordTime.Text, out DateTime recordTime);
+			DateTime recordTime = dateTimePickerRecordTime.Value;
 			bool isInt = int.TryParse(txtQuantity.Text, out int quantity);
 
-			if(isDate == false || isInt == false)
+			if(isInt == false)
 			{
 				MessageBox.Show("請確認各欄位格式正確");
 				return;

@@ -29,13 +29,13 @@
 		private void InitializeComponent()
 		{
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtLocationName = new System.Windows.Forms.TextBox();
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.btnAddLocation = new System.Windows.Forms.Button();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -58,6 +58,31 @@
 			this.dataGridView1.Size = new System.Drawing.Size(383, 319);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+			// 
+			// Column1
+			// 
+			this.Column1.DataPropertyName = "LocationId";
+			this.Column1.HeaderText = "編號";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Visible = false;
+			this.Column1.Width = 80;
+			// 
+			// Column2
+			// 
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column2.DataPropertyName = "LocationName";
+			this.Column2.HeaderText = "名稱";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.DataPropertyName = "UserId";
+			this.Column3.HeaderText = "使用者ID";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Visible = false;
 			// 
 			// label1
 			// 
@@ -96,31 +121,6 @@
 			this.btnAddLocation.UseVisualStyleBackColor = true;
 			this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
 			// 
-			// Column1
-			// 
-			this.Column1.DataPropertyName = "LocationId";
-			this.Column1.HeaderText = "編號";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Visible = false;
-			this.Column1.Width = 80;
-			// 
-			// Column2
-			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column2.DataPropertyName = "LocationName";
-			this.Column2.HeaderText = "名稱";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			// 
-			// Column3
-			// 
-			this.Column3.DataPropertyName = "UserId";
-			this.Column3.HeaderText = "使用者ID";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			this.Column3.Visible = false;
-			// 
 			// FormLocation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -131,6 +131,7 @@
 			this.Controls.Add(this.txtLocationName);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataGridView1);
+			this.MinimumSize = new System.Drawing.Size(472, 505);
 			this.Name = "FormLocation";
 			this.Text = "FormLocation";
 			this.Load += new System.EventHandler(this.FormLocation_Load);

@@ -79,6 +79,7 @@
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.txtLocationName);
 			this.Controls.Add(this.label1);
+			this.MinimumSize = new System.Drawing.Size(280, 181);
 			this.Name = "FormEditLocation";
 			this.Text = "FormEditLocation";
 			this.Load += new System.EventHandler(this.FormEditLocation_Load);

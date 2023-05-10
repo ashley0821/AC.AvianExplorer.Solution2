@@ -39,63 +39,58 @@
 			// 
 			// txtFamilyName
 			// 
-			this.txtFamilyName.Location = new System.Drawing.Point(207, 175);
-			this.txtFamilyName.Margin = new System.Windows.Forms.Padding(6);
+			this.txtFamilyName.Location = new System.Drawing.Point(96, 88);
 			this.txtFamilyName.Name = "txtFamilyName";
-			this.txtFamilyName.Size = new System.Drawing.Size(212, 36);
+			this.txtFamilyName.Size = new System.Drawing.Size(100, 22);
 			this.txtFamilyName.TabIndex = 5;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(125, 185);
-			this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.label3.Location = new System.Drawing.Point(58, 92);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(64, 24);
+			this.label3.Size = new System.Drawing.Size(32, 12);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "科名:";
 			// 
 			// txtSpeciesName
 			// 
-			this.txtSpeciesName.Location = new System.Drawing.Point(207, 119);
-			this.txtSpeciesName.Margin = new System.Windows.Forms.Padding(6);
+			this.txtSpeciesName.Location = new System.Drawing.Point(96, 60);
 			this.txtSpeciesName.Name = "txtSpeciesName";
-			this.txtSpeciesName.Size = new System.Drawing.Size(212, 36);
+			this.txtSpeciesName.Size = new System.Drawing.Size(100, 22);
 			this.txtSpeciesName.TabIndex = 6;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(125, 129);
-			this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.label2.Location = new System.Drawing.Point(58, 64);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(64, 24);
+			this.label2.Size = new System.Drawing.Size(32, 12);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "學名:";
 			// 
 			// txtCommonName
 			// 
-			this.txtCommonName.Location = new System.Drawing.Point(207, 63);
-			this.txtCommonName.Margin = new System.Windows.Forms.Padding(6);
+			this.txtCommonName.Location = new System.Drawing.Point(96, 32);
 			this.txtCommonName.Name = "txtCommonName";
-			this.txtCommonName.Size = new System.Drawing.Size(212, 36);
+			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
 			this.txtCommonName.TabIndex = 7;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(99, 73);
-			this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.label1.Location = new System.Drawing.Point(46, 36);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(88, 24);
+			this.label1.Size = new System.Drawing.Size(44, 12);
 			this.label1.TabIndex = 4;
 			this.label1.Text = "中文名:";
 			// 
 			// btnUpdateSpecies
 			// 
-			this.btnUpdateSpecies.Location = new System.Drawing.Point(266, 237);
+			this.btnUpdateSpecies.Location = new System.Drawing.Point(123, 118);
+			this.btnUpdateSpecies.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.btnUpdateSpecies.Name = "btnUpdateSpecies";
-			this.btnUpdateSpecies.Size = new System.Drawing.Size(153, 54);
+			this.btnUpdateSpecies.Size = new System.Drawing.Size(71, 27);
 			this.btnUpdateSpecies.TabIndex = 8;
 			this.btnUpdateSpecies.Text = "更新";
 			this.btnUpdateSpecies.UseVisualStyleBackColor = true;
@@ -103,9 +98,9 @@
 			// 
 			// FormEditSpecies
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(526, 349);
+			this.ClientSize = new System.Drawing.Size(243, 174);
 			this.Controls.Add(this.btnUpdateSpecies);
 			this.Controls.Add(this.txtFamilyName);
 			this.Controls.Add(this.label3);
@@ -113,6 +108,8 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtCommonName);
 			this.Controls.Add(this.label1);
+			this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.MinimumSize = new System.Drawing.Size(259, 213);
 			this.Name = "FormEditSpecies";
 			this.Text = "FormEditSpecies";
 			this.Load += new System.EventHandler(this.FormEditSpecies_Load);

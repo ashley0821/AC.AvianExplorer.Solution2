@@ -13,7 +13,22 @@ namespace AC.AvianExplorer.DataLayer.Infra
 	{
 		public void Create(RecordAddDto dto)
 		{
-			throw new NotImplementedException();
+			string sql = @"insert into Records VALUES (@UserId,
+(SELECT LocationId FROM Locations WHERE LocationName = @LocationName),
+(SELECT SpeciesId FROM Species WHERE CommonName = @CommonName AND FamilyName = @FamilyName),
+@RecordTime,
+@Quantity)";
+
+			var parameter = SqlParameterBuilder.create()
+				.AddInt("@UserId", dto.UserId)
+				.AddNvarchar("@LocationName", 50, dto.LocationName)
+				.AddNvarchar("@CommonName", 50, dto.CommonName)
+				.AddNvarchar("@FamilyName", 50, dto.FamilyName)
+				.AddDateTime("@RecordTime", dto.RecordTime)
+				.AddInt("@Quantity", dto.Quantity)
+				.Build();
+
+			sqlDb.Create(sqlDb.GetConnection, sql, parameter);
 		}
 
 		public void Delete(int recordId)
@@ -106,7 +121,23 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 
 		public void Update(RecordEditDto dto)
 		{
-			throw new NotImplementedException();
+			string sql = @"UPDATE Records 
+SET LocationId = (SELECT LocationId FROM Locations WHERE LocationName = @LocationName), 
+SpeciesId = (SELECT SpeciesId FROM Species WHERE CommonName = @CommonName AND FamilyName = @FamilyName),
+RecordTime = @RecordTime,
+Quantity = @Quantity
+WHERE RecordId = @RecordId";
+
+			var parameters = SqlParameterBuilder.create()
+							 .AddInt("@RecordId", dto.RecordId)
+							 .AddNvarchar("@LocationName", 50, dto.LocationName)
+							 .AddNvarchar("@CommonName", 50, dto.CommonName)
+							 .AddNvarchar("@FamilyName", 50, dto.FamilyName)
+							 .AddDateTime("@RecordTime", dto.RecordTime)
+							 .AddInt("@Quantity", dto.Quantity)
+							 .Build();
+
+			sqlDb.UpdateOrDelete(sqlDb.GetConnection, sql, parameters);
 		}
 	}
 }

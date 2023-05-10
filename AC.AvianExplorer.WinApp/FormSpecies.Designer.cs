@@ -29,6 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.comboBoxFamilyName = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -37,10 +41,6 @@
 			this.txtSpeciesName = new System.Windows.Forms.TextBox();
 			this.btnSearchSpecies = new System.Windows.Forms.Button();
 			this.btnAddSpecie = new System.Windows.Forms.Button();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -65,6 +65,43 @@
 			this.dataGridView1.Size = new System.Drawing.Size(631, 250);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+			// 
+			// Column4
+			// 
+			this.Column4.DataPropertyName = "SpeciesId";
+			this.Column4.HeaderText = "編號";
+			this.Column4.MinimumWidth = 10;
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			this.Column4.Visible = false;
+			this.Column4.Width = 200;
+			// 
+			// Column3
+			// 
+			this.Column3.DataPropertyName = "FamilyName";
+			this.Column3.HeaderText = "科名";
+			this.Column3.MinimumWidth = 10;
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Width = 150;
+			// 
+			// Column1
+			// 
+			this.Column1.DataPropertyName = "CommonName";
+			this.Column1.HeaderText = "中文名";
+			this.Column1.MinimumWidth = 10;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 150;
+			// 
+			// Column2
+			// 
+			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column2.DataPropertyName = "SpeciesName";
+			this.Column2.HeaderText = "學名";
+			this.Column2.MinimumWidth = 10;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
 			// 
 			// comboBoxFamilyName
 			// 
@@ -137,43 +174,6 @@
 			this.btnAddSpecie.UseVisualStyleBackColor = true;
 			this.btnAddSpecie.Click += new System.EventHandler(this.btnAddSpecie_Click);
 			// 
-			// Column4
-			// 
-			this.Column4.DataPropertyName = "SpeciesId";
-			this.Column4.HeaderText = "編號";
-			this.Column4.MinimumWidth = 10;
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			this.Column4.Visible = false;
-			this.Column4.Width = 200;
-			// 
-			// Column3
-			// 
-			this.Column3.DataPropertyName = "FamilyName";
-			this.Column3.HeaderText = "科名";
-			this.Column3.MinimumWidth = 10;
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			this.Column3.Width = 150;
-			// 
-			// Column1
-			// 
-			this.Column1.DataPropertyName = "CommonName";
-			this.Column1.HeaderText = "中文名";
-			this.Column1.MinimumWidth = 10;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 150;
-			// 
-			// Column2
-			// 
-			this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column2.DataPropertyName = "SpeciesName";
-			this.Column2.HeaderText = "學名";
-			this.Column2.MinimumWidth = 10;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			// 
 			// FormSpecies
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -188,6 +188,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.comboBoxFamilyName);
 			this.Controls.Add(this.dataGridView1);
+			this.MinimumSize = new System.Drawing.Size(699, 423);
 			this.Name = "FormSpecies";
 			this.Load += new System.EventHandler(this.FormSpecies_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

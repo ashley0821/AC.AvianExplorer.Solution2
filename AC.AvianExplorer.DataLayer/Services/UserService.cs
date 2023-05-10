@@ -47,9 +47,29 @@ namespace AC.AvianExplorer.DataLayer.UserServices
 			_repo.Create(entity);
 		}
 
-	    public UserEntity GetByName(string userName)
+		public UserEntity GetByName(string userName)
 		{
 			return _repo.GetByName(userName);
+		}
+
+		public UserEditDto Get(int UserId)
+		{
+			return _repo.Get(UserId).ToEditDto();
+		}
+
+		public void Update(UserEditDto dto)
+		{
+			//檢查name是否已存在
+			var data = _repo.Search(dto.UserName, null);
+			if (data != null && data.Count > 0)
+			{
+				if (data[0].UserId != dto.UserId) throw new Exception("分類名稱已存在，不允許更新");
+			}
+
+
+			//若名稱唯一，允許新建紀錄
+			UserEntity entity = dto.ToEntity();
+			_repo.Update(entity);
 		}
 	}
 }

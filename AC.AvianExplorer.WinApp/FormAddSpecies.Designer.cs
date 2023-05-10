@@ -107,6 +107,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtCommonName);
 			this.Controls.Add(this.label1);
+			this.MinimumSize = new System.Drawing.Size(241, 206);
 			this.Name = "FormAddSpecies";
 			this.Text = "FormAddSpecies";
 			this.ResumeLayout(false);
