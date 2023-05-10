@@ -41,6 +41,7 @@
 			this.txtSpeciesName = new System.Windows.Forms.TextBox();
 			this.btnSearchSpecies = new System.Windows.Forms.Button();
 			this.btnAddSpecie = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -57,12 +58,12 @@
             this.Column3,
             this.Column1,
             this.Column2});
-			this.dataGridView1.Location = new System.Drawing.Point(26, 72);
+			this.dataGridView1.Location = new System.Drawing.Point(26, 88);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowHeadersWidth = 82;
 			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(631, 250);
+			this.dataGridView1.Size = new System.Drawing.Size(631, 253);
 			this.dataGridView1.TabIndex = 4;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
@@ -166,7 +167,7 @@
 			// btnAddSpecie
 			// 
 			this.btnAddSpecie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAddSpecie.Location = new System.Drawing.Point(582, 341);
+			this.btnAddSpecie.Location = new System.Drawing.Point(582, 359);
 			this.btnAddSpecie.Name = "btnAddSpecie";
 			this.btnAddSpecie.Size = new System.Drawing.Size(75, 23);
 			this.btnAddSpecie.TabIndex = 5;
@@ -174,11 +175,21 @@
 			this.btnAddSpecie.UseVisualStyleBackColor = true;
 			this.btnAddSpecie.Click += new System.EventHandler(this.btnAddSpecie_Click);
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(27, 62);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(33, 12);
+			this.label4.TabIndex = 6;
+			this.label4.Text = "label4";
+			// 
 			// FormSpecies
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(683, 384);
+			this.ClientSize = new System.Drawing.Size(683, 403);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.btnAddSpecie);
 			this.Controls.Add(this.btnSearchSpecies);
 			this.Controls.Add(this.txtSpeciesName);
@@ -212,5 +223,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.Label label4;
 	}
 }

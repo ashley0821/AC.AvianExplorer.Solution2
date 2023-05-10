@@ -36,7 +36,7 @@ namespace AC.AvianExplorer.WinApp
 
 
 
-			var location = service.Search(null, null, null, null)
+			var location = service.Search(null, null, null,null, null)
 								  .Where(x => x.UserId == currentUserId)
 								  .Select(x => x.LocationName)
 								  .Distinct()

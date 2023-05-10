@@ -62,6 +62,15 @@ namespace AC.AvianExplorer.WinApp
 
 			dataGridView1.DataSource = dto;
 			
+			int familyQuantity = dto.Select(x => x.FamilyName)
+				                    .Distinct()
+									.Count();
+
+			int speciesQuantity = dto.Select(x => x.CommonName)
+									 .Distinct()
+									 .Count();
+
+			label4.Text = $"共{familyQuantity}科{speciesQuantity}種";
 		}
 
 		private void btnAddSpecie_Click(object sender, EventArgs e)
@@ -101,9 +110,6 @@ namespace AC.AvianExplorer.WinApp
 				frm.Owner = this;
 				frm.ShowDialog();
 			}
-
-
-			
 		}
 
 		

@@ -15,7 +15,7 @@ namespace AC.AvianExplorer.DataLayer.Infra
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
-			string sql = @"SELECT　Records.UserId,LocationName,FamilyName, CommonName, sum(Quantity)as Total
+			string sql = @"SELECT　Records.UserId, FamilyName, CommonName, sum(Quantity)as Total
 FROM Records
 join Locations on Records.LocationId = Locations.LocationId
 Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
@@ -45,14 +45,13 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 			sql += where;
 			#endregion
 
-			sql += " GROUP BY FamilyName, CommonName, Records.UserId,　LocationName"; 
+			sql += " GROUP BY FamilyName, CommonName, Records.UserId "; 
 
 			Func<SqlDataReader, GridDto> funcAssembler = reader =>
 			{
 				return new GridDto
 				{
 					UserId = reader.GetInt32("UserId", 0),
-					LocationName = reader.GetString("LocationName"),
 					FamilyName = reader.GetString("FamilyName"),
 					CommonName = reader.GetString("CommonName"),
 					Total = reader.GetInt32("Total", 0)

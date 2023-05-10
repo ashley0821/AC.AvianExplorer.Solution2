@@ -36,7 +36,7 @@ namespace AC.AvianExplorer.WinApp
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
-			var location = service.Search(null, null, null, null)
+			var location = service.Search(null, null, null, null, null)
 								  .Where(x => x.UserId == currentUserId)
 								  .Select(x => x.LocationName)
 								  .Distinct()
@@ -45,7 +45,7 @@ namespace AC.AvianExplorer.WinApp
 			location.Insert(0, "");
 			comboBoxLocation.DataSource = location;
 
-			var family = service.Search(null, null, null, null)
+			var family = service.Search(null, null, null, null, null)
 									.Where(x => x.UserId == currentUserId)
 									.Select(x => x.FamilyName)
 									.Distinct()
@@ -100,7 +100,7 @@ namespace AC.AvianExplorer.WinApp
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
-			var familyName = service.Search(comboBoxLocation.SelectedItem.ToString(), null, null, null)
+			var familyName = service.Search(comboBoxLocation.SelectedItem.ToString(), null, null,null, null)
 									.Where(x => x.UserId == currentUserId)
 									.Select(x => x.FamilyName)
 									.Distinct()

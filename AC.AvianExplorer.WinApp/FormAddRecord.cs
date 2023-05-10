@@ -52,7 +52,13 @@ namespace AC.AvianExplorer.WinApp
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
-			service.Create(addDto);
+
+			try
+			{
+				service.Create(addDto);
+			}
+			catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+			
 
 			//新增完成，關閉自己，並通知Owner更新內容
 			//泛化 : 把要處理的表單轉成介面

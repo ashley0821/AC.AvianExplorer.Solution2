@@ -13,6 +13,8 @@ namespace AC.AvianExplorer.DataLayer.Interfaces
 		void Update(RecordEditDto dto);
 		void Delete(int recordId);
 		RecordEditDto Get(int recordId);
-		List<RecordDto> Search(string locationName, string familyName, string commonName, int? recordId);
+		List<RecordDto> Search(string locationName, string familyName, string commonName, DateTime? recordTime, int? recordId);
+
+		List<RecordDto> FuzzySearch(string locationName, string familyName, string commonName, DateTime? recordTime, int? recordId);
 	}
 }
