@@ -43,13 +43,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\LocationDto.cs" />
+    <Compile Include="Dtos\RecordDto.cs" />
     <Compile Include="Dtos\SpeciesDto.cs" />
     <Compile Include="Infra\LocationRepository.cs" />
+    <Compile Include="Infra\RecordRepository.cs" />
     <Compile Include="Infra\SpeciesFormerRepository.cs" />
     <Compile Include="Infra\SpeciesRepository.cs" />
     <Compile Include="Interfaces\ILocationRepository.cs" />
+    <Compile Include="Interfaces\IRecordRepository.cs" />
     <Compile Include="Interfaces\ISpeciesRepository.cs" />
     <Compile Include="Services\LocationService.cs" />
+    <Compile Include="Services\RecordService.cs" />
     <Compile Include="Services\SpeciesSercive.cs" />
     <Compile Include="SqlDataReaderExtensions.cs" />
     <Compile Include="Cores\UserEntity.cs" />

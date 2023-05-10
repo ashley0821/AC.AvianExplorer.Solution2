@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,6 +67,12 @@ namespace AC.AvianExplorer.WinApp
 			var frm = new FormSignup();
 			frm.Owner = this;
 			frm.ShowDialog();
+		}
+
+		private void FormLogin_Load(object sender, EventArgs e)
+		{
+			txtName.Text = "aaa";
+			txtPwd.Text = "123";//測試用
 		}
 	}
 }

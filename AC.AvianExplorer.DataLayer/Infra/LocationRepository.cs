@@ -32,7 +32,7 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public LocationDto Get(int locationId)
 		{
-			string sql = "SELECT * FROM Locations WHERE LocationId = " + locationId;
+			string sql = "SELECT * FROM Locations WHERE LocationId = " + locationId + " ON DELETE CASCADE";
 
 			Func<SqlDataReader, LocationDto> funcAssembler = reader =>
 			{

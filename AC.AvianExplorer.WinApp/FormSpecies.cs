@@ -89,5 +89,7 @@ namespace AC.AvianExplorer.WinApp
 			frm.Owner = this;
 			frm.ShowDialog();
 		}
+
+		
 	}
 }
