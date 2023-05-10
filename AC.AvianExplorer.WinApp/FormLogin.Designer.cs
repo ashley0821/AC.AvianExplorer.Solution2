@@ -39,45 +39,46 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(36, 34);
-			this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label1.Location = new System.Drawing.Point(78, 68);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(32, 12);
+			this.label1.Size = new System.Drawing.Size(64, 24);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "名稱:";
 			// 
 			// txtName
 			// 
-			this.txtName.Location = new System.Drawing.Point(82, 29);
-			this.txtName.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.txtName.Location = new System.Drawing.Point(178, 58);
+			this.txtName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
 			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(110, 22);
+			this.txtName.Size = new System.Drawing.Size(234, 36);
 			this.txtName.TabIndex = 0;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(36, 60);
-			this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+			this.label2.Location = new System.Drawing.Point(78, 120);
+			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(32, 12);
+			this.label2.Size = new System.Drawing.Size(64, 24);
 			this.label2.TabIndex = 0;
 			this.label2.Text = "密碼:";
 			// 
 			// txtPwd
 			// 
-			this.txtPwd.Location = new System.Drawing.Point(82, 55);
-			this.txtPwd.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.txtPwd.Location = new System.Drawing.Point(178, 110);
+			this.txtPwd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
 			this.txtPwd.Name = "txtPwd";
-			this.txtPwd.Size = new System.Drawing.Size(110, 22);
+			this.txtPwd.PasswordChar = '*';
+			this.txtPwd.Size = new System.Drawing.Size(234, 36);
 			this.txtPwd.TabIndex = 1;
 			// 
 			// btnSignup
 			// 
-			this.btnSignup.Location = new System.Drawing.Point(67, 88);
-			this.btnSignup.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.btnSignup.Location = new System.Drawing.Point(145, 176);
+			this.btnSignup.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
 			this.btnSignup.Name = "btnSignup";
-			this.btnSignup.Size = new System.Drawing.Size(71, 25);
+			this.btnSignup.Size = new System.Drawing.Size(154, 50);
 			this.btnSignup.TabIndex = 3;
 			this.btnSignup.Text = "註冊會員";
 			this.btnSignup.UseVisualStyleBackColor = true;
@@ -85,10 +86,10 @@
 			// 
 			// btnLogin
 			// 
-			this.btnLogin.Location = new System.Drawing.Point(141, 88);
-			this.btnLogin.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.btnLogin.Location = new System.Drawing.Point(306, 176);
+			this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
 			this.btnLogin.Name = "btnLogin";
-			this.btnLogin.Size = new System.Drawing.Size(49, 25);
+			this.btnLogin.Size = new System.Drawing.Size(106, 50);
 			this.btnLogin.TabIndex = 2;
 			this.btnLogin.Text = "登入";
 			this.btnLogin.UseVisualStyleBackColor = true;
@@ -96,17 +97,17 @@
 			// 
 			// FormLogin
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(254, 147);
+			this.ClientSize = new System.Drawing.Size(550, 294);
 			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.btnSignup);
 			this.Controls.Add(this.txtPwd);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-			this.MinimumSize = new System.Drawing.Size(270, 186);
+			this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+			this.MinimumSize = new System.Drawing.Size(555, 301);
 			this.Name = "FormLogin";
 			this.Text = "FormLogin";
 			this.Load += new System.EventHandler(this.FormLogin_Load);

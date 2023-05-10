@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dtos\GridDto.cs" />
-    <Compile Include="Dtos\LocationDto.cs" />
-    <Compile Include="Dtos\RecordDto.cs" />
-    <Compile Include="Dtos\SpeciesDto.cs" />
+    <Compile Include="Models\GridDto.cs" />
+    <Compile Include="Models\LocationDto.cs" />
+    <Compile Include="Models\RecordDto.cs" />
+    <Compile Include="Models\SpeciesDto.cs" />
     <Compile Include="Infra\GridRepository.cs" />
     <Compile Include="Infra\LocationRepository.cs" />
     <Compile Include="Infra\RecordRepository.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="Services\SpeciesSercive.cs" />
     <Compile Include="SqlDataReaderExtensions.cs" />
     <Compile Include="Cores\UserEntity.cs" />
-    <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Models\UserDto.cs" />
     <Compile Include="Infra\UserRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -29,6 +29,8 @@ namespace AC.AvianExplorer.WinApp
 
 		private void FormEditRecord_Load(object sender, EventArgs e)
 		{
+			dateTimePickerRecordTime.MaxDate = DateTime.Today;
+
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
@@ -67,7 +69,7 @@ namespace AC.AvianExplorer.WinApp
 
 			dateTimePickerRecordTime.Value = dto.RecordTime;
 
-			txtQuantity.Text = dto.Quantity.ToString();
+			numericUpDownQuantity.Value = dto.Quantity;
 			
 		}
 
@@ -91,13 +93,7 @@ namespace AC.AvianExplorer.WinApp
 			string commonName = comboBoxCommonName.Text;
 
 			DateTime recordTime = dateTimePickerRecordTime.Value;
-			bool isInt = int.TryParse(txtQuantity.Text, out int quantity);
-
-			if(isInt == false)
-			{
-				MessageBox.Show("請確認各欄位格式正確");
-				return;
-			}
+			int quantity = (int)numericUpDownQuantity.Value;
 
 			RecordEditDto editDto = new RecordEditDto
 			{

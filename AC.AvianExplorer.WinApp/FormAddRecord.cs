@@ -25,19 +25,12 @@ namespace AC.AvianExplorer.WinApp
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
-		{
-			bool isInt = int.TryParse(txtQuantity.Text, out int  quantity);
-
-			if (isInt == false)
-			{
-				MessageBox.Show("請確認各欄位格式正確");
-				return;	
-			}
-
+		{ 
 			string locationName = comboBoxLocation.Text;
 			string familyName = comboBoxFamilyName.Text;
 			string commonName = comboBoxCommonName.Text;
 			DateTime recordTime = dateTimePickerRecordTime.Value;
+			int quantity = (int)numericUpDownQuantity.Value;
 
 			RecordAddDto addDto = new RecordAddDto
 			{
@@ -80,6 +73,8 @@ namespace AC.AvianExplorer.WinApp
 
 		private void FormAddRecord_Load(object sender, EventArgs e)
 		{
+			dateTimePickerRecordTime.MaxDate = DateTime.Today;
+
 			ILocationRepository categoryRepository = new LocationRepository();
 			LocationService service = new LocationService(categoryRepository);
 
