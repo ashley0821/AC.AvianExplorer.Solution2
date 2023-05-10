@@ -39,7 +39,7 @@
 			this.txtLocationName.Location = new System.Drawing.Point(106, 36);
 			this.txtLocationName.Name = "txtLocationName";
 			this.txtLocationName.Size = new System.Drawing.Size(100, 22);
-			this.txtLocationName.TabIndex = 6;
+			this.txtLocationName.TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -55,7 +55,7 @@
 			this.btnUpdate.Location = new System.Drawing.Point(130, 74);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-			this.btnUpdate.TabIndex = 7;
+			this.btnUpdate.TabIndex = 1;
 			this.btnUpdate.Text = "更新";
 			this.btnUpdate.UseVisualStyleBackColor = true;
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -65,7 +65,7 @@
 			this.btnDelete.Location = new System.Drawing.Point(46, 74);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(75, 23);
-			this.btnDelete.TabIndex = 8;
+			this.btnDelete.TabIndex = 2;
 			this.btnDelete.Text = "刪除";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);

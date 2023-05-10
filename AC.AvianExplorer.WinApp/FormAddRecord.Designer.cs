@@ -48,7 +48,7 @@
 			this.dateTimePickerRecordTime.MaxDate = new System.DateTime(2023, 5, 10, 14, 47, 47, 0);
 			this.dateTimePickerRecordTime.Name = "dateTimePickerRecordTime";
 			this.dateTimePickerRecordTime.Size = new System.Drawing.Size(167, 22);
-			this.dateTimePickerRecordTime.TabIndex = 22;
+			this.dateTimePickerRecordTime.TabIndex = 3;
 			this.dateTimePickerRecordTime.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
 			// 
 			// label7
@@ -66,7 +66,7 @@
 			this.comboBoxCommonName.Location = new System.Drawing.Point(89, 118);
 			this.comboBoxCommonName.Name = "comboBoxCommonName";
 			this.comboBoxCommonName.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxCommonName.TabIndex = 20;
+			this.comboBoxCommonName.TabIndex = 2;
 			// 
 			// label3
 			// 
@@ -92,7 +92,7 @@
 			this.comboBoxFamilyName.Location = new System.Drawing.Point(89, 77);
 			this.comboBoxFamilyName.Name = "comboBoxFamilyName";
 			this.comboBoxFamilyName.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxFamilyName.TabIndex = 17;
+			this.comboBoxFamilyName.TabIndex = 1;
 			this.comboBoxFamilyName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFamilyName_SelectedIndexChanged);
 			// 
 			// comboBoxLocation
@@ -101,7 +101,7 @@
 			this.comboBoxLocation.Location = new System.Drawing.Point(89, 37);
 			this.comboBoxLocation.Name = "comboBoxLocation";
 			this.comboBoxLocation.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxLocation.TabIndex = 16;
+			this.comboBoxLocation.TabIndex = 0;
 			// 
 			// label5
 			// 
@@ -135,14 +135,14 @@
 			this.txtQuantity.Location = new System.Drawing.Point(89, 196);
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(167, 22);
-			this.txtQuantity.TabIndex = 12;
+			this.txtQuantity.TabIndex = 4;
 			// 
 			// btnAdd
 			// 
 			this.btnAdd.Location = new System.Drawing.Point(180, 241);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(75, 23);
-			this.btnAdd.TabIndex = 23;
+			this.btnAdd.TabIndex = 5;
 			this.btnAdd.Text = "新增";
 			this.btnAdd.UseVisualStyleBackColor = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);

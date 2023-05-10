@@ -41,7 +41,7 @@
 			this.txtPwd.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.txtPwd.Name = "txtPwd";
 			this.txtPwd.Size = new System.Drawing.Size(110, 22);
-			this.txtPwd.TabIndex = 5;
+			this.txtPwd.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -59,7 +59,7 @@
 			this.txtName.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(110, 22);
-			this.txtName.TabIndex = 3;
+			this.txtName.TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -76,7 +76,7 @@
 			this.btnUpdateUser.Location = new System.Drawing.Point(120, 83);
 			this.btnUpdateUser.Name = "btnUpdateUser";
 			this.btnUpdateUser.Size = new System.Drawing.Size(75, 23);
-			this.btnUpdateUser.TabIndex = 6;
+			this.btnUpdateUser.TabIndex = 2;
 			this.btnUpdateUser.Text = "更新";
 			this.btnUpdateUser.UseVisualStyleBackColor = true;
 			this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);

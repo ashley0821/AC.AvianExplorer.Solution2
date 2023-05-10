@@ -42,7 +42,7 @@
 			this.txtFamilyName.Location = new System.Drawing.Point(96, 88);
 			this.txtFamilyName.Name = "txtFamilyName";
 			this.txtFamilyName.Size = new System.Drawing.Size(100, 22);
-			this.txtFamilyName.TabIndex = 5;
+			this.txtFamilyName.TabIndex = 2;
 			// 
 			// label3
 			// 
@@ -58,7 +58,7 @@
 			this.txtSpeciesName.Location = new System.Drawing.Point(96, 60);
 			this.txtSpeciesName.Name = "txtSpeciesName";
 			this.txtSpeciesName.Size = new System.Drawing.Size(100, 22);
-			this.txtSpeciesName.TabIndex = 6;
+			this.txtSpeciesName.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -74,7 +74,7 @@
 			this.txtCommonName.Location = new System.Drawing.Point(96, 32);
 			this.txtCommonName.Name = "txtCommonName";
 			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
-			this.txtCommonName.TabIndex = 7;
+			this.txtCommonName.TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -91,7 +91,7 @@
 			this.btnUpdateSpecies.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.btnUpdateSpecies.Name = "btnUpdateSpecies";
 			this.btnUpdateSpecies.Size = new System.Drawing.Size(71, 27);
-			this.btnUpdateSpecies.TabIndex = 8;
+			this.btnUpdateSpecies.TabIndex = 3;
 			this.btnUpdateSpecies.Text = "更新";
 			this.btnUpdateSpecies.UseVisualStyleBackColor = true;
 			this.btnUpdateSpecies.Click += new System.EventHandler(this.btnUpdateSpecies_Click);

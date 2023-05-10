@@ -56,7 +56,7 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(383, 319);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.TabIndex = 2;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// Column1
@@ -98,14 +98,14 @@
 			this.txtLocationName.Location = new System.Drawing.Point(95, 48);
 			this.txtLocationName.Name = "txtLocationName";
 			this.txtLocationName.Size = new System.Drawing.Size(100, 22);
-			this.txtLocationName.TabIndex = 2;
+			this.txtLocationName.TabIndex = 0;
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.Location = new System.Drawing.Point(343, 48);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(75, 23);
-			this.btnSearch.TabIndex = 3;
+			this.btnSearch.TabIndex = 1;
 			this.btnSearch.Text = "搜尋";
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -116,7 +116,7 @@
 			this.btnAddLocation.Location = new System.Drawing.Point(343, 421);
 			this.btnAddLocation.Name = "btnAddLocation";
 			this.btnAddLocation.Size = new System.Drawing.Size(75, 23);
-			this.btnAddLocation.TabIndex = 4;
+			this.btnAddLocation.TabIndex = 3;
 			this.btnAddLocation.Text = "新增";
 			this.btnAddLocation.UseVisualStyleBackColor = true;
 			this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);

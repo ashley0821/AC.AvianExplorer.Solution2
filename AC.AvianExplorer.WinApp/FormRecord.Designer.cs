@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +70,7 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(726, 281);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.TabIndex = 4;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// Column1
@@ -114,9 +114,9 @@
 			// Column6
 			// 
 			this.Column6.DataPropertyName = "RecordTime";
-			dataGridViewCellStyle2.Format = "yyyy/MM/dd";
-			dataGridViewCellStyle2.NullValue = null;
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle3.Format = "yyyy/MM/dd";
+			dataGridViewCellStyle3.NullValue = null;
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
 			this.Column6.HeaderText = "日期";
 			this.Column6.Name = "Column6";
 			this.Column6.ReadOnly = true;
@@ -133,7 +133,7 @@
 			this.btnSearchRecord.Location = new System.Drawing.Point(690, 55);
 			this.btnSearchRecord.Name = "btnSearchRecord";
 			this.btnSearchRecord.Size = new System.Drawing.Size(75, 23);
-			this.btnSearchRecord.TabIndex = 1;
+			this.btnSearchRecord.TabIndex = 3;
 			this.btnSearchRecord.Text = "搜尋";
 			this.btnSearchRecord.UseVisualStyleBackColor = true;
 			this.btnSearchRecord.Click += new System.EventHandler(this.btnSearchRecord_Click);
@@ -144,7 +144,7 @@
 			this.comboBoxLocation.Location = new System.Drawing.Point(79, 56);
 			this.comboBoxLocation.Name = "comboBoxLocation";
 			this.comboBoxLocation.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxLocation.TabIndex = 2;
+			this.comboBoxLocation.TabIndex = 0;
 			this.comboBoxLocation.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocation_SelectedIndexChanged);
 			// 
 			// txtCommonName
@@ -152,7 +152,7 @@
 			this.txtCommonName.Location = new System.Drawing.Point(465, 55);
 			this.txtCommonName.Name = "txtCommonName";
 			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
-			this.txtCommonName.TabIndex = 8;
+			this.txtCommonName.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -178,7 +178,7 @@
 			this.comboBoxFamilyName.Location = new System.Drawing.Point(269, 56);
 			this.comboBoxFamilyName.Name = "comboBoxFamilyName";
 			this.comboBoxFamilyName.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxFamilyName.TabIndex = 5;
+			this.comboBoxFamilyName.TabIndex = 1;
 			this.comboBoxFamilyName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFamilyName_SelectedIndexChanged);
 			// 
 			// label3
@@ -196,7 +196,7 @@
 			this.btnAddRecord.Location = new System.Drawing.Point(689, 400);
 			this.btnAddRecord.Name = "btnAddRecord";
 			this.btnAddRecord.Size = new System.Drawing.Size(75, 23);
-			this.btnAddRecord.TabIndex = 10;
+			this.btnAddRecord.TabIndex = 5;
 			this.btnAddRecord.Text = "新增";
 			this.btnAddRecord.UseVisualStyleBackColor = true;
 			this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
@@ -207,7 +207,7 @@
 			this.btnGrid.Location = new System.Drawing.Point(595, 400);
 			this.btnGrid.Name = "btnGrid";
 			this.btnGrid.Size = new System.Drawing.Size(75, 23);
-			this.btnGrid.TabIndex = 11;
+			this.btnGrid.TabIndex = 6;
 			this.btnGrid.Text = "查看統計表";
 			this.btnGrid.UseVisualStyleBackColor = true;
 			this.btnGrid.Click += new System.EventHandler(this.btnGrid_Click);

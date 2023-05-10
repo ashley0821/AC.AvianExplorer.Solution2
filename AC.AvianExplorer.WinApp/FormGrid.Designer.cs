@@ -59,7 +59,7 @@
 			this.txtCommonName.Location = new System.Drawing.Point(463, 41);
 			this.txtCommonName.Name = "txtCommonName";
 			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
-			this.txtCommonName.TabIndex = 16;
+			this.txtCommonName.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -85,7 +85,7 @@
 			this.comboBoxFamilyName.Location = new System.Drawing.Point(267, 42);
 			this.comboBoxFamilyName.Name = "comboBoxFamilyName";
 			this.comboBoxFamilyName.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxFamilyName.TabIndex = 13;
+			this.comboBoxFamilyName.TabIndex = 1;
 			this.comboBoxFamilyName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFamilyName_SelectedIndexChanged);
 			// 
 			// comboBoxLocation
@@ -94,7 +94,7 @@
 			this.comboBoxLocation.Location = new System.Drawing.Point(77, 42);
 			this.comboBoxLocation.Name = "comboBoxLocation";
 			this.comboBoxLocation.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxLocation.TabIndex = 12;
+			this.comboBoxLocation.TabIndex = 0;
 			this.comboBoxLocation.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocation_SelectedIndexChanged);
 			// 
 			// dataGridView1
@@ -116,14 +116,14 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(726, 281);
-			this.dataGridView1.TabIndex = 10;
+			this.dataGridView1.TabIndex = 4;
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.Location = new System.Drawing.Point(688, 41);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(75, 23);
-			this.btnSearch.TabIndex = 18;
+			this.btnSearch.TabIndex = 3;
 			this.btnSearch.Text = "搜尋";
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

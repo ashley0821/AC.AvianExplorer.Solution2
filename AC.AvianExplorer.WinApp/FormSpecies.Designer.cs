@@ -63,7 +63,7 @@
 			this.dataGridView1.RowHeadersWidth = 82;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(631, 250);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.TabIndex = 4;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// Column4
@@ -109,7 +109,7 @@
 			this.comboBoxFamilyName.Location = new System.Drawing.Point(65, 28);
 			this.comboBoxFamilyName.Name = "comboBoxFamilyName";
 			this.comboBoxFamilyName.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxFamilyName.TabIndex = 1;
+			this.comboBoxFamilyName.TabIndex = 0;
 			this.comboBoxFamilyName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFamilyName_SelectedIndexChanged);
 			// 
 			// label1
@@ -135,7 +135,7 @@
 			this.txtCommonName.Location = new System.Drawing.Point(261, 27);
 			this.txtCommonName.Name = "txtCommonName";
 			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
-			this.txtCommonName.TabIndex = 4;
+			this.txtCommonName.TabIndex = 1;
 			// 
 			// label3
 			// 
@@ -151,14 +151,14 @@
 			this.txtSpeciesName.Location = new System.Drawing.Point(428, 27);
 			this.txtSpeciesName.Name = "txtSpeciesName";
 			this.txtSpeciesName.Size = new System.Drawing.Size(100, 22);
-			this.txtSpeciesName.TabIndex = 4;
+			this.txtSpeciesName.TabIndex = 2;
 			// 
 			// btnSearchSpecies
 			// 
 			this.btnSearchSpecies.Location = new System.Drawing.Point(582, 26);
 			this.btnSearchSpecies.Name = "btnSearchSpecies";
 			this.btnSearchSpecies.Size = new System.Drawing.Size(75, 23);
-			this.btnSearchSpecies.TabIndex = 5;
+			this.btnSearchSpecies.TabIndex = 3;
 			this.btnSearchSpecies.Text = "搜尋";
 			this.btnSearchSpecies.UseVisualStyleBackColor = true;
 			this.btnSearchSpecies.Click += new System.EventHandler(this.btnSearchSpecies_Click);
@@ -169,7 +169,7 @@
 			this.btnAddSpecie.Location = new System.Drawing.Point(582, 341);
 			this.btnAddSpecie.Name = "btnAddSpecie";
 			this.btnAddSpecie.Size = new System.Drawing.Size(75, 23);
-			this.btnAddSpecie.TabIndex = 6;
+			this.btnAddSpecie.TabIndex = 5;
 			this.btnAddSpecie.Text = "新增";
 			this.btnAddSpecie.UseVisualStyleBackColor = true;
 			this.btnAddSpecie.Click += new System.EventHandler(this.btnAddSpecie_Click);

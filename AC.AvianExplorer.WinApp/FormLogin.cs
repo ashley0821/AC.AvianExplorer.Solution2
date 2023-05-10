@@ -71,8 +71,8 @@ namespace AC.AvianExplorer.WinApp
 
 		private void FormLogin_Load(object sender, EventArgs e)
 		{
-			txtName.Text = "aaa";
-			txtPwd.Text = "123";//測試用
+			//txtName.Text = "aaa";
+			//txtPwd.Text = "123";//測試用
 		}
 	}
 }

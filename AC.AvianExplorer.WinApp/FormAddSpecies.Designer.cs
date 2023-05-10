@@ -51,7 +51,7 @@
 			this.txtCommonName.Location = new System.Drawing.Point(79, 24);
 			this.txtCommonName.Name = "txtCommonName";
 			this.txtCommonName.Size = new System.Drawing.Size(100, 22);
-			this.txtCommonName.TabIndex = 1;
+			this.txtCommonName.TabIndex = 0;
 			// 
 			// label2
 			// 
@@ -83,14 +83,14 @@
 			this.txtFamilyName.Location = new System.Drawing.Point(79, 80);
 			this.txtFamilyName.Name = "txtFamilyName";
 			this.txtFamilyName.Size = new System.Drawing.Size(100, 22);
-			this.txtFamilyName.TabIndex = 1;
+			this.txtFamilyName.TabIndex = 2;
 			// 
 			// btnAddSpecies
 			// 
 			this.btnAddSpecies.Location = new System.Drawing.Point(103, 109);
 			this.btnAddSpecies.Name = "btnAddSpecies";
 			this.btnAddSpecies.Size = new System.Drawing.Size(75, 23);
-			this.btnAddSpecies.TabIndex = 2;
+			this.btnAddSpecies.TabIndex = 3;
 			this.btnAddSpecies.Text = "新增";
 			this.btnAddSpecies.UseVisualStyleBackColor = true;
 			this.btnAddSpecies.Click += new System.EventHandler(this.btnAddSpecies_Click);

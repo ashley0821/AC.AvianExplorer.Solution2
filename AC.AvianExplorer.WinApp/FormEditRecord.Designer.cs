@@ -66,7 +66,7 @@
 			this.txtQuantity.Location = new System.Drawing.Point(95, 210);
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(167, 22);
-			this.txtQuantity.TabIndex = 0;
+			this.txtQuantity.TabIndex = 4;
 			// 
 			// label5
 			// 
@@ -83,7 +83,7 @@
 			this.comboBoxLocation.Location = new System.Drawing.Point(95, 51);
 			this.comboBoxLocation.Name = "comboBoxLocation";
 			this.comboBoxLocation.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxLocation.TabIndex = 2;
+			this.comboBoxLocation.TabIndex = 0;
 			// 
 			// label2
 			// 
@@ -100,7 +100,7 @@
 			this.comboBoxFamilyName.Location = new System.Drawing.Point(95, 91);
 			this.comboBoxFamilyName.Name = "comboBoxFamilyName";
 			this.comboBoxFamilyName.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxFamilyName.TabIndex = 3;
+			this.comboBoxFamilyName.TabIndex = 1;
 			this.comboBoxFamilyName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFamilyName_SelectedIndexChanged);
 			// 
 			// label3
@@ -117,7 +117,7 @@
 			this.btnUpdate.Location = new System.Drawing.Point(187, 248);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-			this.btnUpdate.TabIndex = 7;
+			this.btnUpdate.TabIndex = 5;
 			this.btnUpdate.Text = "更新";
 			this.btnUpdate.UseVisualStyleBackColor = true;
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -128,7 +128,7 @@
 			this.comboBoxCommonName.Location = new System.Drawing.Point(95, 132);
 			this.comboBoxCommonName.Name = "comboBoxCommonName";
 			this.comboBoxCommonName.Size = new System.Drawing.Size(167, 20);
-			this.comboBoxCommonName.TabIndex = 8;
+			this.comboBoxCommonName.TabIndex = 2;
 			// 
 			// label7
 			// 
@@ -145,7 +145,7 @@
 			this.dateTimePickerRecordTime.MaxDate = new System.DateTime(2023, 5, 10, 14, 47, 57, 0);
 			this.dateTimePickerRecordTime.Name = "dateTimePickerRecordTime";
 			this.dateTimePickerRecordTime.Size = new System.Drawing.Size(167, 22);
-			this.dateTimePickerRecordTime.TabIndex = 11;
+			this.dateTimePickerRecordTime.TabIndex = 3;
 			this.dateTimePickerRecordTime.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
 			// 
 			// btnDelete
@@ -153,7 +153,7 @@
 			this.btnDelete.Location = new System.Drawing.Point(106, 248);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(75, 23);
-			this.btnDelete.TabIndex = 12;
+			this.btnDelete.TabIndex = 6;
 			this.btnDelete.Text = "刪除";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			// 

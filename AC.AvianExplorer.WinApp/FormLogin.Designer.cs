@@ -78,7 +78,7 @@
 			this.btnSignup.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.btnSignup.Name = "btnSignup";
 			this.btnSignup.Size = new System.Drawing.Size(71, 25);
-			this.btnSignup.TabIndex = 2;
+			this.btnSignup.TabIndex = 3;
 			this.btnSignup.Text = "註冊會員";
 			this.btnSignup.UseVisualStyleBackColor = true;
 			this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
