@@ -50,7 +50,6 @@ namespace AC.AvianExplorer.WinApp
 		{
 			Display();
 
-			SetComboBox();
 		}
 
 		public void SetComboBox()
