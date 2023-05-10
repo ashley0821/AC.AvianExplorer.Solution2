@@ -108,7 +108,7 @@
 			this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
 			this.MinimumSize = new System.Drawing.Size(270, 186);
 			this.Name = "FormLogin";
-			this.Text = "Form1";
+			this.Text = "FormLogin";
 			this.Load += new System.EventHandler(this.FormLogin_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
