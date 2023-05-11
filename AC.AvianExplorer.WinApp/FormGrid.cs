@@ -87,17 +87,27 @@ namespace AC.AvianExplorer.WinApp
 
 			string description = "";
 
-			foreach (var item in dto2)
+			for(int i = 0; i < dto2.Count(); i++)
 			{
-				string name = item.CommonName.ToString();
-				string quantity = item.Total.ToString();
+				string name = dto2[i].CommonName.ToString();
+				string quantity = dto2[i].Total.ToString();
 
-				description = description + "、" + name + quantity + "隻次";
+				if(i == (dto2.Count() -1))
+				{
+					description = description + "及" + name + quantity + "隻次";
+				}
+				else
+				{
+					description = description + "、" + name + quantity + "隻次";
+				}
+
+				
 			}
+
 
 			description = description.Substring(1);
 
-			labelDescription.Text = $"共紀錄{familyQuantity}科{speciesQuantity}種，{totalQuantity}隻次。\r\n數量最多的分別為" + description + "。";
+			labelDescription.Text = $"共記錄{familyQuantity}科{speciesQuantity}種{totalQuantity}隻次。\r\n記錄數量最多的物種分別為" + description + "。";
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
