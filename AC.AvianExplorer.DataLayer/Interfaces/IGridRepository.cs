@@ -9,8 +9,8 @@ namespace AC.AvianExplorer.DataLayer.Interfaces
 {
 	public interface IGridRepository
 	{
-		List<GridDto> Search(string locationName, string familyName, string commonName);
+		List<GridDto> Search(string locationName, string familyName, string commonName, int? userId);
 
-		List<GridDto> TopThree(string locationName, string familyName, string commonName);
+		List<GridDto> TopThree(string locationName, string familyName, string commonName, int? userId);
 	}
 }

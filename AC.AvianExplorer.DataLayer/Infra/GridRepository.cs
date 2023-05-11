@@ -11,11 +11,11 @@ namespace AC.AvianExplorer.DataLayer.Infra
 {
 	public class GridRepository : IGridRepository
 	{
-		public List<GridDto> Search(string locationName, string familyName, string commonName)
+		public List<GridDto> Search(string locationName, string familyName, string commonName, int? userId)
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
-			string sql = @"SELECT　Records.UserId, FamilyName, CommonName, sum(Quantity)as Total
+			string sql = @"SELECT　FamilyName, CommonName, sum(Quantity)as Total
 FROM Records
 join Locations on Records.LocationId = Locations.LocationId
 Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
@@ -41,17 +41,22 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 				parameters.Add(new SqlParameter("@CommonName", System.Data.SqlDbType.NVarChar, 50) { Value = commonName });
 			}
 
+			if (userId.HasValue)
+			{
+				where += " AND Records.UserId  = @UserId";
+				parameters.Add(new SqlParameter("@UserId", System.Data.SqlDbType.Int) { Value = userId.Value });
+			}
+
 			where = string.IsNullOrEmpty(where) ? string.Empty : " WHERE " + where.Substring(5);//去除前面的" AND "
 			sql += where;
 			#endregion
 
-			sql += " GROUP BY FamilyName, CommonName, Records.UserId "; 
+			sql += " GROUP BY  CommonName, FamilyName"; 
 
 			Func<SqlDataReader, GridDto> funcAssembler = reader =>
 			{
 				return new GridDto
 				{
-					UserId = reader.GetInt32("UserId", 0),
 					FamilyName = reader.GetString("FamilyName"),
 					CommonName = reader.GetString("CommonName"),
 					Total = reader.GetInt32("Total", 0)
@@ -61,11 +66,11 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 			return sqlDb.Search<GridDto>(sqlDb.GetConnection, funcAssembler, sql, parameters.ToArray());
 		}
 
-		public List<GridDto> TopThree(string locationName, string familyName, string commonName)
+		public List<GridDto> TopThree(string locationName, string familyName, string commonName, int? userId)
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
-			string sql = @"SELECT TOP(3) WITH TIES　Records.UserId, FamilyName, CommonName, sum(Quantity)as Total
+			string sql = @"SELECT TOP(3) WITH TIES　FamilyName, CommonName, sum(Quantity)as Total
 FROM Records
 join Locations on Records.LocationId = Locations.LocationId
 Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
@@ -91,18 +96,22 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 				parameters.Add(new SqlParameter("@CommonName", System.Data.SqlDbType.NVarChar, 50) { Value = commonName });
 			}
 
-			
+			if (userId.HasValue)
+			{
+				where += " AND Records.UserId  = @UserId";
+				parameters.Add(new SqlParameter("@UserId", System.Data.SqlDbType.Int) { Value = userId.Value });
+			}
+
 			where = string.IsNullOrEmpty(where) ? string.Empty : " WHERE " + where.Substring(5);//去除前面的" AND "
 			sql += where;
 			#endregion
 
-			sql += " GROUP BY FamilyName, CommonName, Records.UserId ORDER BY sum(Quantity) DESC";
+			sql += " GROUP BY  CommonName, FamilyName ORDER BY sum(Quantity) DESC";
 
 			Func<SqlDataReader, GridDto> funcAssembler = reader =>
 			{
 				return new GridDto
 				{
-					UserId = reader.GetInt32("UserId", 0),
 					FamilyName = reader.GetString("FamilyName"),
 					CommonName = reader.GetString("CommonName"),
 					Total = reader.GetInt32("Total", 0)

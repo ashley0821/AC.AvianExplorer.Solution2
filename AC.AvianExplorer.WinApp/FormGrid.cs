@@ -63,15 +63,13 @@ namespace AC.AvianExplorer.WinApp
 			string familyName = comboBoxFamilyName.Text;
 			string commonName = txtCommonName.Text;
 
-			var dto = service.Search(locationName, familyName, commonName)
-				             .Where(x => x.UserId == currentUserId)
+			var dto = service.Search(locationName, familyName, commonName,	currentUserId)
 							 .ToList();
 
 			dataGridView1.DataSource = dto;
 
-			var dto2 = dto.OrderByDescending(x => x.Total)
-				          .Take(3)
-						  .ToList();
+			var dto2 = service.TopThree(locationName, familyName, commonName, currentUserId)
+							 .ToList();
 
 			dataGridView2.DataSource = dto2;	
 

@@ -17,16 +17,16 @@ namespace AC.AvianExplorer.DataLayer.Services
 			this._repo = repo;
 		}
 
-		public List<GridDto> Search(string locationName, string familyName, string commonName)
+		public List<GridDto> Search(string locationName, string familyName, string commonName, int userId)
 		{
-			List<GridDto> data = _repo.Search(locationName, familyName, commonName);
+			List<GridDto> data = _repo.Search(locationName, familyName, commonName, userId);
 
 			return data;
 		}
 
-		public List<GridDto> TopThree(string locationName, string familyName, string commonName)
+		public List<GridDto> TopThree(string locationName, string familyName, string commonName, int userId)
 		{
-			List<GridDto> data = _repo.Search(locationName, familyName, commonName);
+			List<GridDto> data = _repo.TopThree(locationName, familyName, commonName, userId);
 
 			return data;
 		}
