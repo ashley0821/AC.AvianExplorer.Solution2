@@ -51,7 +51,7 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 			sql += where;
 			#endregion
 
-			sql += " GROUP BY  CommonName, FamilyName"; 
+			sql += " GROUP BY CommonName, FamilyName"; 
 
 			Func<SqlDataReader, GridDto> funcAssembler = reader =>
 			{
