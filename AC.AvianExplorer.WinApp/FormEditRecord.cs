@@ -38,7 +38,10 @@ namespace AC.AvianExplorer.WinApp
 
 
 
-			var location = service.Search(null, null, null,null, null)
+			ILocationRepository categoryRepository3 = new LocationRepository();
+			LocationService service3 = new LocationService(categoryRepository3);
+
+			var location = service3.Search(null, currentUserId, null)
 								  .Where(x => x.UserId == currentUserId)
 								  .Select(x => x.LocationName)
 								  .Distinct()
@@ -131,6 +134,13 @@ namespace AC.AvianExplorer.WinApp
 				owner.Display();
 			}
 
+			FormRecord owerForm = this.Owner as FormRecord;
+
+			if (owerForm != null)
+			{
+				owerForm.SetComboBox();
+			}
+
 			this.DialogResult = DialogResult.OK;//寫這個，會自動關閉本表單
 		}
 
@@ -151,6 +161,13 @@ namespace AC.AvianExplorer.WinApp
 			else
 			{
 				owner.Display();
+			}
+
+			FormRecord owerForm = this.Owner as FormRecord;
+
+			if (owerForm != null)
+			{
+				owerForm.SetComboBox();
 			}
 
 			this.DialogResult = DialogResult.OK;//寫這個，會自動關閉本表單

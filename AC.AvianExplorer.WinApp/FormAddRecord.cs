@@ -78,7 +78,7 @@ namespace AC.AvianExplorer.WinApp
 			ILocationRepository categoryRepository = new LocationRepository();
 			LocationService service = new LocationService(categoryRepository);
 
-			var location = service.Search(null, null)
+			var location = service.Search(null, currentUserId, null)
 								  .Where(x => x.UserId == currentUserId)
 								  .Select(x => x.LocationName)
 								  .Distinct()

@@ -20,7 +20,7 @@ namespace AC.AvianExplorer.DataLayer.Services
 		public void Create(LocationAddDto dto)
 		{
 			//檢查name是否已存在
-			var data = _repo.Search(dto.LocationName, null);
+			var data = _repo.Search(dto.LocationName,dto.UserId, null);
 			if (data != null && data.Count > 0) throw new Exception("分類名稱已存在");
 
 			//若名稱唯一，允許新建紀錄
@@ -30,7 +30,7 @@ namespace AC.AvianExplorer.DataLayer.Services
 		public void Update(LocationEditDto dto)
 		{
 			//檢查name是否已存在
-			List<LocationDto> data = _repo.Search(dto.LocationName, null);
+			List<LocationDto> data = _repo.Search(dto.LocationName, dto.UserId, null);
 			if (data != null && data.Count > 0)
 			{
 				if (data[0].LocationId != dto.LocationId) throw new Exception("分類名稱已存在，不允許更新");
@@ -46,9 +46,16 @@ namespace AC.AvianExplorer.DataLayer.Services
 			_repo.Delete(locationId);
 		}
 
-		public List<LocationDto> Search(string name, int? id)
+		public List<LocationDto> Search(string name, int userId, int? id)
 		{
-			List<LocationDto> data = _repo.Search(name, id);
+			List<LocationDto> data = _repo.Search(name, userId, id);
+
+			return data;
+		}
+
+		public List<LocationDto> FuzzySearch(string name, int userId, int? id)
+		{
+			List<LocationDto> data = _repo.FuzzySearch(name, userId, id);
 
 			return data;
 		}

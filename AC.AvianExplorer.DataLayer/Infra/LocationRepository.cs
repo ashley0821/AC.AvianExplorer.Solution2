@@ -48,7 +48,51 @@ namespace AC.AvianExplorer.DataLayer.Infra
 			return sqlDb.Get<LocationDto>(sqlDb.GetConnection, funcAssembler, sql, null);
 		}
 
-		public List<LocationDto> Search(string locationName, int? locationId)
+		public List<LocationDto> Search(string locationName, int? userId, int? locationId)
+		{
+			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
+
+			string sql = "SELECT * FROM Locations";
+
+			#region 組合出where條件
+			string where = string.Empty;
+
+			if (string.IsNullOrEmpty(locationName) == false)
+			{
+				where += " AND LocationName = @LocationName ";
+				parameters.Add(new SqlParameter("@LocationName", System.Data.SqlDbType.NVarChar, 50) { Value = locationName });
+			}
+
+			if (userId.HasValue)
+			{
+				where += " AND UserId =" + userId.Value;
+			}
+
+			if (locationId.HasValue)
+			{
+				where += " AND LocationId =" + locationId.Value;
+			}
+
+			where = string.IsNullOrEmpty(where) ? string.Empty : " WHERE " + where.Substring(5);//去除前面的" AND "
+			sql += where;
+			#endregion
+
+			sql += " ORDER BY LocationId";
+
+			Func<SqlDataReader, LocationDto> funcAssembler = reader =>
+			{
+				return new LocationDto
+				{
+					LocationId = reader.GetInt32("LocationId", 0),
+					LocationName = reader.GetString("LocationName"),
+					UserId = reader.GetInt32("UserId", 0)
+				};
+			};
+
+			return sqlDb.Search<LocationDto>(sqlDb.GetConnection, funcAssembler, sql, parameters.ToArray());
+		}
+
+		public List<LocationDto> FuzzySearch(string locationName, int? userId, int? locationId)
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
@@ -63,9 +107,14 @@ namespace AC.AvianExplorer.DataLayer.Infra
 				parameters.Add(new SqlParameter("@LocationName", System.Data.SqlDbType.NVarChar, 50) { Value = locationName });
 			}
 
+			if (userId.HasValue)
+			{
+				where += " AND UserId =" + userId.Value;
+			}
+
 			if (locationId.HasValue)
 			{
-				where += " AND id =" + locationId.Value;
+				where += " AND LocationId =" + locationId.Value;
 			}
 
 			where = string.IsNullOrEmpty(where) ? string.Empty : " WHERE " + where.Substring(5);//去除前面的" AND "

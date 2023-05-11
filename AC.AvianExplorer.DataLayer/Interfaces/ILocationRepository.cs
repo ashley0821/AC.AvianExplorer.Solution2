@@ -15,6 +15,8 @@ namespace AC.AvianExplorer.DataLayer.Interfaces
 		LocationDto Get(int locationId);
 
 		//需要join資料表時，回傳dto比較恰當
-		List<LocationDto> Search(string locationName, int? locationId);
+		List<LocationDto> Search(string locationName, int? userId,int? locationId);
+
+		List<LocationDto> FuzzySearch(string locationName, int? userId, int? locationId);
 	}
 }

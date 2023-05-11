@@ -28,8 +28,6 @@ namespace AC.AvianExplorer.WinApp
 
 		public void Display()
 		{
-			
-
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
@@ -37,13 +35,10 @@ namespace AC.AvianExplorer.WinApp
 			string familyName = comboBoxFamilyName.Text;
 			string commonName = txtCommonName.Text;
 
-			dto = service.FuzzySearch(locationName, familyName, commonName,null, null)
-				         .Where(x => x.UserId == currentUserId)
+			dto = service.FuzzySearch(locationName, familyName, commonName,null, currentUserId, null)
 					     .ToList();
 
 			dataGridView1.DataSource = dto;
-
-			
 		}
 
 		private void btnSearchRecord_Click(object sender, EventArgs e)
@@ -57,8 +52,7 @@ namespace AC.AvianExplorer.WinApp
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
-			var location = service.Search(null, null, null,null, null)
-								  .Where(x => x.UserId == currentUserId)
+			var location = service.Search(null, null, null,null, currentUserId, null)
 								  .Select(x => x.LocationName)
 								  .Distinct()
 								  .ToList();
@@ -66,8 +60,7 @@ namespace AC.AvianExplorer.WinApp
 			location.Insert(0, "");
 			comboBoxLocation.DataSource = location;
 
-			var family = service.Search(null, null, null,null, null)
-									.Where(x => x.UserId == currentUserId)
+			var family = service.Search(null, null, null,null, currentUserId, null)
 									.Select(x => x.FamilyName)
 									.Distinct()
 									.ToList();
@@ -98,7 +91,7 @@ namespace AC.AvianExplorer.WinApp
 			IRecordRepository categoryRepository = new RecordRepository();
 			RecordService service = new RecordService(categoryRepository);
 
-			var familyName = service.Search(comboBoxLocation.SelectedItem.ToString(), null, null, null, null)
+			var familyName = service.Search(comboBoxLocation.SelectedItem.ToString(), null, null, null, currentUserId, null)
 									.Where(x => x.UserId == currentUserId)
 									.Select(x => x.FamilyName)
 									.Distinct()

@@ -44,11 +44,8 @@ namespace AC.AvianExplorer.WinApp
 			ILocationRepository categoryRepository = new LocationRepository();
 			LocationService service = new LocationService(categoryRepository);
 
-			dto = service.Search(name, null)
-						.Where(x => x.UserId == currentUserId)
+			dto = service.FuzzySearch(name, currentUserId, null)
 						.ToList();
-
-
 
 			dataGridView1.DataSource = dto;
 		}

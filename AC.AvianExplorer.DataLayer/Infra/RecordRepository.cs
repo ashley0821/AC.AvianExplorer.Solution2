@@ -63,7 +63,7 @@ WHERE RecordId = " + recordId;
 			return sqlDb.Get<RecordEditDto>(sqlDb.GetConnection, funcAssembler, sql, null);
 		}
 
-		public List<RecordDto> Search(string locationName, string familyName, string commonName, DateTime? recordTime, int? recordId)
+		public List<RecordDto> Search(string locationName, string familyName, string commonName, DateTime? recordTime, int? userId, int? recordId)
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
@@ -99,6 +99,11 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 				parameters.Add(new SqlParameter("@RecordTime", System.Data.SqlDbType.DateTime) { Value = recordTime });
 			}
 
+			if (userId.HasValue)
+			{
+				where += " AND records.UserId =" + userId.Value;
+			}
+
 			if (recordId.HasValue)
 			{
 				where += " AND RecordId =" + recordId.Value;
@@ -127,7 +132,7 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 			return sqlDb.Search<RecordDto>(sqlDb.GetConnection, funcAssembler, sql, parameters.ToArray());
 		}
 
-		public List<RecordDto> FuzzySearch(string locationName, string familyName, string commonName, DateTime? recordTime, int? recordId)
+		public List<RecordDto> FuzzySearch(string locationName, string familyName, string commonName, DateTime? recordTime, int? userId, int? recordId)
 		{
 			List<SqlParameter> parameters = new List<SqlParameter>();//不知道要加幾個 所以用list而不是array
 
@@ -161,6 +166,11 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 			{
 				where += " AND RecordTime = @RecordTime ";
 				parameters.Add(new SqlParameter("@RecordTime", System.Data.SqlDbType.DateTime) { Value = recordTime });
+			}
+
+			if (userId.HasValue)
+			{
+				where += " AND records.UserId =" + userId.Value;
 			}
 
 			if (recordId.HasValue)
