@@ -43,7 +43,7 @@ namespace AC.AvianExplorer.WinApp
 				txtName.Text = string.Empty;
 				txtPwd.Text = string.Empty;
 
-				var frm = new FormMain(currentUserId);
+				var frm = new FormMain(currentUserId, currentUser);
 				frm.Owner = this;
 
 				//不能將FormLogin關閉，只能隱藏

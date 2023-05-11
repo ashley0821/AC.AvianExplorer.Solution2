@@ -14,10 +14,13 @@ namespace AC.AvianExplorer.WinApp
 	public partial class FormMain : Form
 	{
 		private readonly int currentUserId;
-		public FormMain(int currentUserId)
+
+		private readonly UserEntity currentUser;
+		public FormMain(int currentUserId , UserEntity user)
 		{
 			InitializeComponent();
 			this.currentUserId = currentUserId;
+			this.currentUser = user;
 		}
 
 		private void btmLocation_Click(object sender, EventArgs e)
@@ -49,6 +52,17 @@ namespace AC.AvianExplorer.WinApp
 			var frm = new FormUser(currentUserId);
 			frm.Owner = this;
 			frm.ShowDialog();
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void FormMain_Load(object sender, EventArgs e)
+		{
+			string name = currentUser.UserName.ToString();
+			label2.Text = $"{name}用戶您好，歡迎使用";
 		}
 	}
 }

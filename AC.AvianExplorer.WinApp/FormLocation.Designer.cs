@@ -36,7 +36,9 @@
 			this.txtLocationName = new System.Windows.Forms.TextBox();
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.btnAddLocation = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -121,21 +123,39 @@
 			this.btnAddLocation.UseVisualStyleBackColor = true;
 			this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.ErrorImage = global::AC.AvianExplorer.WinApp.Properties.Resources.螢幕擷取畫面_2023_05_11_152633;
+			this.pictureBox1.Image = global::AC.AvianExplorer.WinApp.Properties.Resources.螢幕擷取畫面_2023_05_11_152901;
+			this.pictureBox1.InitialImage = global::AC.AvianExplorer.WinApp.Properties.Resources.螢幕擷取畫面_2023_05_11_152633;
+			this.pictureBox1.Location = new System.Drawing.Point(-46, -4);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(686, 479);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormLocation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(456, 466);
+			this.ClientSize = new System.Drawing.Size(639, 466);
 			this.Controls.Add(this.btnAddLocation);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.txtLocationName);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataGridView1);
-			this.MinimumSize = new System.Drawing.Size(472, 505);
+			this.Controls.Add(this.pictureBox1);
+			this.MaximumSize = new System.Drawing.Size(655, 505);
+			this.MinimumSize = new System.Drawing.Size(655, 505);
 			this.Name = "FormLocation";
 			this.Text = "FormLocation";
 			this.Load += new System.EventHandler(this.FormLocation_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -151,5 +171,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
