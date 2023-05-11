@@ -14,7 +14,7 @@ namespace AC.AvianExplorer.DataLayer.Infra
 		public void Create(RecordAddDto dto)
 		{
 			string sql = @"insert into Records VALUES (@UserId,
-(SELECT LocationId FROM Locations WHERE LocationName = @LocationName),
+(SELECT LocationId FROM Locations WHERE LocationName = @LocationName AND UserId = @UserId),
 (SELECT SpeciesId FROM Species WHERE CommonName = @CommonName AND FamilyName = @FamilyName),
 @RecordTime,
 @Quantity)";
@@ -77,13 +77,13 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 
 			if (string.IsNullOrEmpty(locationName) == false)
 			{
-				where += " AND LocationName LIKE '%' + @LocationName + '%'";
+				where += " AND LocationName = @LocationName ";
 				parameters.Add(new SqlParameter("@LocationName", System.Data.SqlDbType.NVarChar, 50) { Value = locationName });
 			}
 
 			if (string.IsNullOrEmpty(familyName) == false)
 			{
-				where += " AND FamilyName LIKE '%' + @FamilyName + '%'";
+				where += " AND FamilyName = @FamilyName ";
 				parameters.Add(new SqlParameter("@FamilyName", System.Data.SqlDbType.NVarChar, 50) { Value = familyName });
 			}
 

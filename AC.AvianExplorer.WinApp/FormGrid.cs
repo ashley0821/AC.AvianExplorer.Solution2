@@ -37,7 +37,6 @@ namespace AC.AvianExplorer.WinApp
 			RecordService service = new RecordService(categoryRepository);
 
 			var location = service.Search(null, null, null, null, currentUserId, null)
-								  .Where(x => x.UserId == currentUserId)
 								  .Select(x => x.LocationName)
 								  .Distinct()
 								  .ToList();
@@ -46,7 +45,6 @@ namespace AC.AvianExplorer.WinApp
 			comboBoxLocation.DataSource = location;
 
 			var family = service.Search(null, null, null, null, currentUserId, null)
-									.Where(x => x.UserId == currentUserId)
 									.Select(x => x.FamilyName)
 									.Distinct()
 									.ToList();
@@ -66,12 +64,14 @@ namespace AC.AvianExplorer.WinApp
 			string commonName = txtCommonName.Text;
 
 			var dto = service.Search(locationName, familyName, commonName)
-							 .Where(x => x.UserId == currentUserId)
+				             .Where(x => x.UserId == currentUserId)
 							 .ToList();
 
 			dataGridView1.DataSource = dto;
 
-			var dto2 = dto.OrderByDescending(x => x.Total).Take(3).ToList();
+			var dto2 = dto.OrderByDescending(x => x.Total)
+				          .Take(3)
+						  .ToList();
 
 			dataGridView2.DataSource = dto2;	
 
@@ -94,10 +94,12 @@ namespace AC.AvianExplorer.WinApp
 				string name = item.CommonName.ToString();
 				string quantity = item.Total.ToString();
 
-
+				description = description + "、" + name + quantity + "隻次";
 			}
 
-			labelDescription.Text = $"共紀錄{familyQuantity}科{speciesQuantity}種，{totalQuantity}隻次";
+			description = description.Substring(1);
+
+			labelDescription.Text = $"共紀錄{familyQuantity}科{speciesQuantity}種，{totalQuantity}隻次。\r\n數量最多的分別為" + description + "。";
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)

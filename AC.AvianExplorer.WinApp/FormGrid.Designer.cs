@@ -118,11 +118,11 @@
             this.Column3,
             this.Column4,
             this.Column5});
-			this.dataGridView1.Location = new System.Drawing.Point(37, 231);
+			this.dataGridView1.Location = new System.Drawing.Point(37, 293);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(726, 268);
+			this.dataGridView1.Size = new System.Drawing.Size(726, 316);
 			this.dataGridView1.TabIndex = 4;
 			// 
 			// Column1
@@ -196,11 +196,11 @@
             this.Column8,
             this.Column9,
             this.Column10});
-			this.dataGridView2.Location = new System.Drawing.Point(253, 82);
+			this.dataGridView2.Location = new System.Drawing.Point(37, 144);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
 			this.dataGridView2.RowTemplate.Height = 24;
-			this.dataGridView2.Size = new System.Drawing.Size(510, 122);
+			this.dataGridView2.Size = new System.Drawing.Size(726, 126);
 			this.dataGridView2.TabIndex = 20;
 			// 
 			// Column6
@@ -245,7 +245,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 543);
+			this.ClientSize = new System.Drawing.Size(800, 653);
 			this.Controls.Add(this.dataGridView2);
 			this.Controls.Add(this.labelDescription);
 			this.Controls.Add(this.btnSearch);

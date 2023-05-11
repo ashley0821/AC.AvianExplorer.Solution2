@@ -23,5 +23,12 @@ namespace AC.AvianExplorer.DataLayer.Services
 
 			return data;
 		}
+
+		public List<GridDto> TopThree(string locationName, string familyName, string commonName)
+		{
+			List<GridDto> data = _repo.Search(locationName, familyName, commonName);
+
+			return data;
+		}
 	}
 }

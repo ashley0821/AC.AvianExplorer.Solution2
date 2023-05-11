@@ -38,7 +38,7 @@ namespace AC.AvianExplorer.DataLayer.Services
 
 		public void Update(RecordEditDto dto)
 		{
-			List<RecordDto> data = _repo.Search(dto.LocationName, dto.FamilyName, dto.CommonName, dto.RecordTime,dto.UserId, null);
+			List<RecordDto> data = _repo.Search(dto.LocationName, dto.FamilyName, dto.CommonName, dto.RecordTime, dto.UserId, null);
 			if (data != null && data.Count > 0)
 			{
 				if (data[0].RecordId != dto.RecordId) throw new Exception("分類名稱已存在，不允許更新");
