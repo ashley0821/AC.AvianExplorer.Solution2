@@ -176,10 +176,10 @@
 			// labelDescription
 			// 
 			this.labelDescription.AutoSize = true;
-			this.labelDescription.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.labelDescription.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.labelDescription.Location = new System.Drawing.Point(41, 82);
 			this.labelDescription.Name = "labelDescription";
-			this.labelDescription.Size = new System.Drawing.Size(45, 16);
+			this.labelDescription.Size = new System.Drawing.Size(51, 19);
 			this.labelDescription.TabIndex = 19;
 			this.labelDescription.Text = "label4";
 			// 
