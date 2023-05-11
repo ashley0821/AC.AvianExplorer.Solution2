@@ -133,5 +133,27 @@ namespace AC.AvianExplorer.WinApp
 
 			this.DialogResult = DialogResult.OK;//寫這個，會自動關閉本表單
 		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			IRecordRepository categoryRepository = new RecordRepository();
+			RecordService service = new RecordService(categoryRepository);
+
+			service.Delete(this.recordId);
+
+			//新增完成，關閉自己，並通知Owner更新內容
+			IGrid owner = this.Owner as IGrid;//若用as轉型失敗會傳回null，不會丟出例外，會比顯式轉型好
+
+			if (owner == null)
+			{
+				MessageBox.Show("忘記把owner實作IGrid了，請補一下");
+			}
+			else
+			{
+				owner.Display();
+			}
+
+			this.DialogResult = DialogResult.OK;//寫這個，會自動關閉本表單
+		}
 	}
 }

@@ -58,5 +58,10 @@ namespace AC.AvianExplorer.DataLayer.Services
 			//若名稱唯一，允許新建紀錄
 			_repo.Create(dto);
 		}
+
+		public void Delete(int id)
+		{
+			_repo.Delete(id);
+		}
 	}
 }

@@ -33,7 +33,9 @@ namespace AC.AvianExplorer.DataLayer.Infra
 
 		public void Delete(int recordId)
 		{
-			throw new NotImplementedException();
+			string sql = "DELETE FROM Records WHERE RecordId = " + recordId;
+
+			sqlDb.UpdateOrDelete(sqlDb.GetConnection, sql, null);
 		}
 
 		public RecordEditDto Get(int recordId)
