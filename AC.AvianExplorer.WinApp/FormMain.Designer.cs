@@ -33,13 +33,14 @@
 			this.btnRecord = new System.Windows.Forms.Button();
 			this.btnUser = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btmLocation
 			// 
+			this.btmLocation.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btmLocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btmLocation.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.btmLocation.Location = new System.Drawing.Point(346, 100);
@@ -47,11 +48,12 @@
 			this.btmLocation.Size = new System.Drawing.Size(75, 23);
 			this.btmLocation.TabIndex = 0;
 			this.btmLocation.Text = "管理地點";
-			this.btmLocation.UseVisualStyleBackColor = true;
+			this.btmLocation.UseVisualStyleBackColor = false;
 			this.btmLocation.Click += new System.EventHandler(this.btmLocation_Click);
 			// 
 			// btnSpecies
 			// 
+			this.btnSpecies.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnSpecies.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSpecies.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.btnSpecies.Location = new System.Drawing.Point(346, 142);
@@ -59,11 +61,12 @@
 			this.btnSpecies.Size = new System.Drawing.Size(75, 23);
 			this.btnSpecies.TabIndex = 1;
 			this.btnSpecies.Text = "管理名錄";
-			this.btnSpecies.UseVisualStyleBackColor = true;
+			this.btnSpecies.UseVisualStyleBackColor = false;
 			this.btnSpecies.Click += new System.EventHandler(this.btnSpecies_Click);
 			// 
 			// btnRecord
 			// 
+			this.btnRecord.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnRecord.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.btnRecord.Location = new System.Drawing.Point(346, 184);
@@ -72,11 +75,12 @@
 			this.btnRecord.Size = new System.Drawing.Size(75, 23);
 			this.btnRecord.TabIndex = 2;
 			this.btnRecord.Text = "管理紀錄";
-			this.btnRecord.UseVisualStyleBackColor = true;
+			this.btnRecord.UseVisualStyleBackColor = false;
 			this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
 			// 
 			// btnUser
 			// 
+			this.btnUser.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnUser.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.btnUser.Location = new System.Drawing.Point(346, 226);
@@ -84,7 +88,7 @@
 			this.btnUser.Size = new System.Drawing.Size(75, 23);
 			this.btnUser.TabIndex = 3;
 			this.btnUser.Text = "管理帳號";
-			this.btnUser.UseVisualStyleBackColor = true;
+			this.btnUser.UseVisualStyleBackColor = false;
 			this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
 			// 
 			// label1
@@ -93,22 +97,11 @@
 			this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
 			this.label1.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.label1.Location = new System.Drawing.Point(0, 341);
+			this.label1.Location = new System.Drawing.Point(0, 377);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(315, 61);
 			this.label1.TabIndex = 5;
 			this.label1.Text = "台灣野鳥觀察";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::AC.AvianExplorer.WinApp.Properties.Resources.螢幕擷取畫面_2023_05_11_150753;
-			this.pictureBox1.Location = new System.Drawing.Point(-97, -2);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(695, 431);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 4;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
 			// label2
 			// 
@@ -117,17 +110,29 @@
 			this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.label2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label2.Location = new System.Drawing.Point(240, 43);
+			this.label2.Location = new System.Drawing.Point(28, 4);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(75, 26);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "label2";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::AC.AvianExplorer.WinApp.Properties.Resources.螢幕擷取畫面_2023_05_11_150753;
+			this.pictureBox1.Location = new System.Drawing.Point(-96, 33);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(695, 431);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(503, 423);
+			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.ClientSize = new System.Drawing.Size(503, 458);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnUser);
@@ -136,8 +141,8 @@
 			this.Controls.Add(this.btmLocation);
 			this.Controls.Add(this.pictureBox1);
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(519, 462);
-			this.MinimumSize = new System.Drawing.Size(519, 462);
+			this.MaximumSize = new System.Drawing.Size(519, 497);
+			this.MinimumSize = new System.Drawing.Size(519, 497);
 			this.Name = "FormMain";
 			this.Text = "FormMain";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
