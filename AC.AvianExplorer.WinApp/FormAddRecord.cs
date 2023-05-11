@@ -74,6 +74,7 @@ namespace AC.AvianExplorer.WinApp
 		private void FormAddRecord_Load(object sender, EventArgs e)
 		{
 			dateTimePickerRecordTime.MaxDate = DateTime.Today;
+			dateTimePickerRecordTime.Value = DateTime.Today;
 
 			ILocationRepository categoryRepository = new LocationRepository();
 			LocationService service = new LocationService(categoryRepository);

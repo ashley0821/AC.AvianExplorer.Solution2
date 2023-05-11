@@ -16,5 +16,7 @@ namespace AC.AvianExplorer.DataLayer.Interfaces
 
 		//需要join資料表時，回傳dto比較恰當
 		List<SpeciesDto> Search(string commonName, string speciesName, string familyName, int? speciesId);
+
+		List<SpeciesDto> FuzzySearch(string commonName, string speciesName, string familyName, int? speciesId);
 	}
 }

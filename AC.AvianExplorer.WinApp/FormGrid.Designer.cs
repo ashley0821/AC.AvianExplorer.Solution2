@@ -35,14 +35,21 @@
 			this.comboBoxFamilyName = new System.Windows.Forms.ComboBox();
 			this.comboBoxLocation = new System.Windows.Forms.ComboBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.btnSearch = new System.Windows.Forms.Button();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnSearch = new System.Windows.Forms.Button();
 			this.labelDescription = new System.Windows.Forms.Label();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label3
@@ -111,22 +118,12 @@
             this.Column3,
             this.Column4,
             this.Column5});
-			this.dataGridView1.Location = new System.Drawing.Point(37, 116);
+			this.dataGridView1.Location = new System.Drawing.Point(37, 231);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(726, 281);
+			this.dataGridView1.Size = new System.Drawing.Size(726, 268);
 			this.dataGridView1.TabIndex = 4;
-			// 
-			// btnSearch
-			// 
-			this.btnSearch.Location = new System.Drawing.Point(688, 41);
-			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(75, 23);
-			this.btnSearch.TabIndex = 3;
-			this.btnSearch.Text = "搜尋";
-			this.btnSearch.UseVisualStyleBackColor = true;
-			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// Column1
 			// 
@@ -166,6 +163,16 @@
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
 			// 
+			// btnSearch
+			// 
+			this.btnSearch.Location = new System.Drawing.Point(688, 41);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(75, 23);
+			this.btnSearch.TabIndex = 3;
+			this.btnSearch.Text = "搜尋";
+			this.btnSearch.UseVisualStyleBackColor = true;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+			// 
 			// labelDescription
 			// 
 			this.labelDescription.AutoSize = true;
@@ -175,11 +182,71 @@
 			this.labelDescription.TabIndex = 19;
 			this.labelDescription.Text = "label4";
 			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
+			this.dataGridView2.Location = new System.Drawing.Point(253, 82);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.ReadOnly = true;
+			this.dataGridView2.RowTemplate.Height = 24;
+			this.dataGridView2.Size = new System.Drawing.Size(510, 122);
+			this.dataGridView2.TabIndex = 20;
+			// 
+			// Column6
+			// 
+			this.Column6.DataPropertyName = "UserId";
+			this.Column6.HeaderText = "使用者ID";
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			this.Column6.Visible = false;
+			// 
+			// Column7
+			// 
+			this.Column7.DataPropertyName = "LocationName";
+			this.Column7.HeaderText = "地點";
+			this.Column7.Name = "Column7";
+			this.Column7.ReadOnly = true;
+			this.Column7.Visible = false;
+			// 
+			// Column8
+			// 
+			this.Column8.DataPropertyName = "FamilyName";
+			this.Column8.HeaderText = "科名";
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
+			// 
+			// Column9
+			// 
+			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Column9.DataPropertyName = "CommonName";
+			this.Column9.HeaderText = "中文名";
+			this.Column9.Name = "Column9";
+			this.Column9.ReadOnly = true;
+			// 
+			// Column10
+			// 
+			this.Column10.DataPropertyName = "Total";
+			this.Column10.HeaderText = "數量";
+			this.Column10.Name = "Column10";
+			this.Column10.ReadOnly = true;
+			// 
 			// FormGrid
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 441);
+			this.ClientSize = new System.Drawing.Size(800, 543);
+			this.Controls.Add(this.dataGridView2);
 			this.Controls.Add(this.labelDescription);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.label3);
@@ -194,6 +261,7 @@
 			this.Text = "FormGrid";
 			this.Load += new System.EventHandler(this.FormGrid_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -215,5 +283,11 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.Label labelDescription;
+		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
 	}
 }

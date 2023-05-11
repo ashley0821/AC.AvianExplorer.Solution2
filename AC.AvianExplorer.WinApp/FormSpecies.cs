@@ -58,7 +58,7 @@ namespace AC.AvianExplorer.WinApp
 			string speciesName = txtSpeciesName.Text;
 			string familyName = comboBoxFamilyName.Text;
 
-			dto = service.Search(commonName, speciesName, familyName, null);
+			dto = service.FuzzySearch(commonName, speciesName, familyName, null);
 
 			dataGridView1.DataSource = dto;
 			

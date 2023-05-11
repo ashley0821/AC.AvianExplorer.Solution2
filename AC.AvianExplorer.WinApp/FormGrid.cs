@@ -71,6 +71,11 @@ namespace AC.AvianExplorer.WinApp
 
 			dataGridView1.DataSource = dto;
 
+			var dto2 = dto.OrderByDescending(x => x.Total).Take(3).ToList();
+
+			dataGridView2.DataSource = dto2;	
+
+
 			int familyQuantity = dto.Select(x => x.FamilyName)
 									.Distinct()
 									.Count();
@@ -82,7 +87,15 @@ namespace AC.AvianExplorer.WinApp
 			int totalQuantity = dto.Select(x => x.Total)
 								   .Sum();
 
+			string description = "";
 
+			foreach (var item in dto2)
+			{
+				string name = item.CommonName.ToString();
+				string quantity = item.Total.ToString();
+
+
+			}
 
 			labelDescription.Text = $"共紀錄{familyQuantity}科{speciesQuantity}種，{totalQuantity}隻次";
 		}

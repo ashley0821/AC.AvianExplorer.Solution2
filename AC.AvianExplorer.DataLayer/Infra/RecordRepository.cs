@@ -204,7 +204,7 @@ Join [dbo].[Species] on Species.SpeciesId = Records.SpeciesId";
 		public void Update(RecordEditDto dto)
 		{
 			string sql = @"UPDATE Records 
-SET LocationId = (SELECT LocationId FROM Locations WHERE LocationName = @LocationName), 
+SET LocationId = (SELECT LocationId FROM Locations WHERE LocationName = @LocationName AND UserId = @UserId), 
 SpeciesId = (SELECT SpeciesId FROM Species WHERE CommonName = @CommonName AND FamilyName = @FamilyName),
 RecordTime = @RecordTime,
 Quantity = @Quantity
@@ -212,6 +212,7 @@ WHERE RecordId = @RecordId";
 
 			var parameters = SqlParameterBuilder.create()
 							 .AddInt("@RecordId", dto.RecordId)
+							 .AddInt("@UserId", dto.UserId)
 							 .AddNvarchar("@LocationName", 50, dto.LocationName)
 							 .AddNvarchar("@CommonName", 50, dto.CommonName)
 							 .AddNvarchar("@FamilyName", 50, dto.FamilyName)

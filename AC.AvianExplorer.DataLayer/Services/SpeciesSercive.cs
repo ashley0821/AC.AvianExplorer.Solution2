@@ -25,6 +25,13 @@ namespace AC.AvianExplorer.DataLayer.Services
 			return data;
 		}
 
+		public List<SpeciesDto> FuzzySearch(string commonName, string speciesName, string familyName, int? speciesId)
+		{
+			List<SpeciesDto> data = _repo.FuzzySearch(commonName, speciesName, familyName, speciesId);
+
+			return data;
+		}
+
 		public void Create(SpeciesAddDto dto)
 		{
 			//檢查name是否已存在
