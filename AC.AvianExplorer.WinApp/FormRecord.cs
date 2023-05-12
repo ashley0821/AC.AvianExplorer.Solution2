@@ -133,7 +133,7 @@ namespace AC.AvianExplorer.WinApp
 			//視窗關掉後，owner會自動更新
 			frm.Owner = this;
 
-			frm.ShowDialog();
+			frm.Show();
 		}
 	}
 }
